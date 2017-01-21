@@ -2,6 +2,10 @@
     who has dug himself deep into the mines to discover rare gems!
     But "Time is money" for every second your total money will decrease.
 */
+
+//CLASSES
+GemData coin;
+
 int gameScreen = 0;
 
 //Mapping Variables
@@ -27,9 +31,13 @@ int charY = 400;
 int charSize = 20;
 int charSpeed = 10;
 
+//Array for Gems
+ArrayList<GemData> coins = new ArrayList<GemData>();
+
 void setup()
 {
   size(900,800); //Width and Height
+  coin = new GemData();
   
 }
 
@@ -78,7 +86,7 @@ void gameScreen()
   score();
   character();
   charMove();
-  
+  gemDisplay();
 }
 
 void gameOverScreen()
@@ -172,4 +180,11 @@ void charMove()
     }
     
   }
+}
+
+//Here is where gems are displayed
+void gemDisplay()
+{
+  coin.gemMapping();
+  
 }
