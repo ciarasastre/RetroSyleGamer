@@ -9,6 +9,15 @@ int startX= 0;
 int startY= 0;
 int recW = 100;
 int recH = 160;
+int mapColourR = 242;
+int mapColourG = 144;
+int mapColourB = 255;
+
+//Character Variables
+int charX = 450;
+int charY = 400;
+int charSize = 20;
+int charSpeed = 10;
 
 void setup()
 {
@@ -59,6 +68,8 @@ void gameScreen()
 {
   background(255);
   mapping();
+  character();
+  charMove();
   
 }
 
@@ -91,9 +102,7 @@ void startGame()
 //This method discovers the blocks available for character movement
 void mapping()
 {
-  //fill( random(0,255),random(0,255),random(0,255) );
-  fill(1,3,255);
-  strokeWeight(10);
+  fill(mapColourR, mapColourG, mapColourB);
   stroke(0);
   
   for(int i=0; i<9; i++)
@@ -110,4 +119,40 @@ void mapping()
   }
   
   startX = 0;
+}
+
+//This creates the character
+void character()
+{
+  fill(0);
+  ellipse(charX, charY, charSize, charSize);
+  
+}
+
+//Moves Character
+void charMove()
+{
+  if(keyPressed)
+  {
+    if(keyCode == RIGHT)
+    {
+      charX += charSpeed;
+    }
+    
+    if(keyCode == LEFT)
+    {
+      charX -= charSpeed;
+    }
+    
+    if(keyCode == UP)
+    {
+      charY -= charSpeed;
+    }
+    
+    if(keyCode == DOWN)
+    {
+      charY += charSpeed;
+    }
+    
+  }
 }
