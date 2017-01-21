@@ -13,6 +13,14 @@ int mapColourR = 242;
 int mapColourG = 144;
 int mapColourB = 255;
 
+//Score Variables
+int scoreX = 10;
+int scoreY = 30;
+int score = 100;
+int highScoreX = 10;
+int highScoreY = 60;
+int highScore = 120;
+
 //Character Variables
 int charX = 450;
 int charY = 400;
@@ -59,7 +67,6 @@ void draw()
 void initScreen()
 {
   background(0);
-  //textAlign(CENTER);
   text("Click to Start", height/2, width/2);
   
 }
@@ -68,6 +75,7 @@ void gameScreen()
 {
   background(255);
   mapping();
+  score();
   character();
   charMove();
   
@@ -119,6 +127,15 @@ void mapping()
   }
   
   startX = 0;
+}
+
+//Score is kept here
+void score()
+{
+  fill(0);
+  textSize(30);
+  text("Score = "+score, scoreX, scoreY);
+  text("HighScore = "+highScore, highScoreX,  highScoreY);
 }
 
 //This creates the character
