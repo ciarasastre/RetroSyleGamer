@@ -4,10 +4,15 @@
 */
 int gameScreen = 0;
 
+//Mapping Variables
+int startX= 0;
+int startY= 0;
+int recW = 100;
+int recH = 160;
 
 void setup()
 {
-  size(500,500);
+  size(900,800); //Width and Height
   
 }
 
@@ -45,7 +50,7 @@ void draw()
 void initScreen()
 {
   background(0);
-  textAlign(CENTER);
+  //textAlign(CENTER);
   text("Click to Start", height/2, width/2);
   
 }
@@ -53,6 +58,7 @@ void initScreen()
 void gameScreen()
 {
   background(255);
+  mapping();
   
 }
 
@@ -80,4 +86,28 @@ public void mousePressed()
 void startGame()
 {
   gameScreen = 1;
+}
+
+//This method discovers the blocks available for character movement
+void mapping()
+{
+  //fill( random(0,255),random(0,255),random(0,255) );
+  fill(1,3,255);
+  strokeWeight(10);
+  stroke(0);
+  
+  for(int i=0; i<9; i++)
+  {
+    for(int j = 0; j<5; j++)
+    {
+      rect(startX,startY,recW,recH);
+      startY += 160;
+    }
+    
+    startY = 0;
+    startX += 100;
+   
+  }
+  
+  startX = 0;
 }
