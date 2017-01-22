@@ -198,6 +198,8 @@ void mapDisplay()
       coin.gemScore1();
       door.doorPosL();
       door.doorPosR();
+      door.doorPosT();
+      door.doorPosB();
       break;
     }
   }
