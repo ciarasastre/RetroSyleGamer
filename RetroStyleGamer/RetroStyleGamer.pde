@@ -5,6 +5,7 @@
 
 //CLASSES
 GemData coin;
+DoorData door;
 
 int gameScreen = 0;
 
@@ -16,6 +17,7 @@ int recH = 160;
 int mapColourR = 242;
 int mapColourG = 144;
 int mapColourB = 255;
+int map = 1;
 
 //Score Variables
 int scoreX = 10;
@@ -38,6 +40,7 @@ void setup()
 {
   size(900,800); //Width and Height
   coin = new GemData();
+  door = new DoorData();
   
 }
 
@@ -86,7 +89,7 @@ void gameScreen()
   score();
   character();
   charMove();
-  gemDisplay();
+  mapDisplay();
   
 }
 
@@ -185,9 +188,16 @@ void charMove()
 }
 
 //Here is where gems are displayed
-void gemDisplay()
+void mapDisplay()
 {
-  coin.gemMapping1();
-  coin.gemScore1();
+  switch(map)
+  {
+    case(1):
+    {
+      coin.gemMapping1();
+      coin.gemScore1();
+      break;
+    }
+  }
   
 }

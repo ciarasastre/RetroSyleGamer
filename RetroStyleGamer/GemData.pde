@@ -14,11 +14,17 @@ class GemData
   int xVal;
   int yVal;
   
-  int clear1;
-  int clear2;
-  int clear3;
-  int clear4;
-  int clear5;
+  int topClear1;
+  int topClear2;
+  int topClear3;
+  
+  int midClear1;
+  int midClear2;
+  int midClear3;
+  
+  int botClear1;
+  int botClear2;
+  int botClear3;
   
   float randX[] = {50, 150, 250, 350, 450, 550, 650, 750, 850};
   float randY[] = {80, 240, 400, 560, 720};
@@ -60,25 +66,70 @@ class GemData
     
     
     //Top Section
-    if(clear1 == 1)
+    if(topClear1 == 1)
     {
       fill(dead);
       noStroke();
       ellipse(randX[2], randY[1], gemSize, gemSize);
     }
     
-    if(clear2 == 1)
+    if(topClear2 == 1)
     {
       fill(dead);
       noStroke();
       ellipse(randX[3], randY[1], gemSize, gemSize);
     }
     
-    if(clear3 == 1)
+    if(topClear3 == 1)
     {
       fill(dead);
       noStroke();
       ellipse(randX[4], randY[1], gemSize, gemSize);
+    }
+    
+    //Mid Section
+    if(midClear1 == 1)
+    {
+      fill(dead);
+      noStroke();
+      ellipse(randX[1], randY[1], gemSize, gemSize);
+    }
+    
+    if(midClear2 == 1)
+    {
+      fill(dead);
+      noStroke();
+      ellipse(randX[1], randY[2], gemSize, gemSize);
+    }
+    
+    if(midClear3 == 1)
+    {
+      fill(dead);
+      noStroke();
+      ellipse(randX[1], randY[3], gemSize, gemSize);
+    }
+    
+    //Bot Section
+    if(botClear1 == 1)
+    {
+      fill(dead);
+      noStroke();
+      ellipse(randX[2], randY[3], gemSize, gemSize);
+    }
+    
+    if(botClear2 == 1)
+    {
+      fill(dead);
+      noStroke();
+      ellipse(randX[3], randY[3], gemSize, gemSize);
+    }
+    
+    
+    if(botClear3 == 1)
+    {
+      fill(dead);
+      noStroke();
+      ellipse(randX[4], randY[3], gemSize, gemSize);
     }
     
   }
@@ -89,19 +140,57 @@ class GemData
     if(charX <= randX[2]+xVal && charX >= randX[2]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
     {
       score = score + 1;
-      clear1 = 1; 
+      topClear1 = 1; 
     }
     
     if(charX <= randX[3]+xVal && charX >= randX[3]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
     {
       score = score + 1;
-      clear2 = 1; 
+      topClear2 = 1; 
     }
     
     if(charX <= randX[4]+xVal && charX >= randX[4]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
     {
       score = score + 1;
-      clear3 = 1; 
+      topClear3 = 1; 
+    }
+    
+    //Mid Section
+    if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
+    {
+      score = score + 1;
+      midClear1 = 1; 
+    }
+    
+    if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[2]+yVal && charY >= randY[2]-yVal)
+    {
+      score = score + 1;
+      midClear2 = 1; 
+    }
+    
+    if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
+    {
+      score = score + 1;
+      midClear3 = 1; 
+    }
+    
+    //Bot Section
+    if(charX <= randX[2]+xVal && charX >= randX[2]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
+    {
+      score = score + 1;
+      botClear1 = 1; 
+    }
+    
+    if(charX <= randX[3]+xVal && charX >= randX[3]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
+    {
+      score = score + 1;
+      botClear2 = 1; 
+    }
+    
+    if(charX <= randX[4]+xVal && charX >= randX[4]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
+    {
+      score = score + 1;
+      botClear3 = 1; 
     }
     
     
