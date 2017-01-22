@@ -1,4 +1,4 @@
-class GemData
+class GemData 
 {
   //Declare datatypes here
   float randRow;
@@ -10,6 +10,15 @@ class GemData
   
   int alive;
   int dead;
+  
+  int xVal;
+  int yVal;
+  
+  int clear1;
+  int clear2;
+  int clear3;
+  int clear4;
+  int clear5;
   
   float randX[] = {50, 150, 250, 350, 450, 550, 650, 750, 850};
   float randY[] = {80, 240, 400, 560, 720};
@@ -24,27 +33,78 @@ class GemData
     
     randRow = random(1,9);
     randCol = random(1,5);
+    
+    xVal = 50;
+    yVal = 80;
 
+  }
+  
+  void gemMapping1()
+  {
+    fill(alive);
+    
+    //Top Section
+    ellipse(randX[2], randY[1], gemSize, gemSize);
+    ellipse(randX[3], randY[1], gemSize, gemSize);
+    ellipse(randX[4], randY[1], gemSize, gemSize); //right here
+    
+    //Mid Section
+    ellipse(randX[1], randY[1], gemSize, gemSize);
+    ellipse(randX[1], randY[2], gemSize, gemSize);
+    ellipse(randX[1], randY[3], gemSize, gemSize);
+    
+    //Bot Section
+    ellipse(randX[2], randY[3], gemSize, gemSize);
+    ellipse(randX[3], randY[3], gemSize, gemSize);
+    ellipse(randX[4], randY[3], gemSize, gemSize);
+    
+    
+    //Top Section
+    if(clear1 == 1)
+    {
+      fill(dead);
+      noStroke();
+      ellipse(randX[2], randY[1], gemSize, gemSize);
+    }
+    
+    if(clear2 == 1)
+    {
+      fill(dead);
+      noStroke();
+      ellipse(randX[3], randY[1], gemSize, gemSize);
+    }
+    
+    if(clear3 == 1)
+    {
+      fill(dead);
+      noStroke();
+      ellipse(randX[4], randY[1], gemSize, gemSize);
+    }
     
   }
   
-  void gemMapping()
+  void gemScore1()
   {
-    fill(alive);
-    ellipse(randX[0], randY[3], gemSize, gemSize);
-    ellipse(randX[1], randY[2], gemSize, gemSize);
-    
-    if(charX == randX[0] && charY == randY[3])
+    //Top Section
+    if(charX <= randX[2]+xVal && charX >= randX[2]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
     {
-      score+=1;
-      
+      score = score + 1;
+      clear1 = 1; 
     }
     
-    if(charX == randX[1] && charY == randY[2])
+    if(charX <= randX[3]+xVal && charX >= randX[3]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
     {
-      score+=1;
+      score = score + 1;
+      clear2 = 1; 
     }
-
+    
+    if(charX <= randX[4]+xVal && charX >= randX[4]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
+    {
+      score = score + 1;
+      clear3 = 1; 
+    }
+    
+    
   }
   
 }

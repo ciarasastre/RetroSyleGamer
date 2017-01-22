@@ -87,6 +87,7 @@ void gameScreen()
   character();
   charMove();
   gemDisplay();
+  
 }
 
 void gameOverScreen()
@@ -144,6 +145,7 @@ void score()
   textSize(30);
   text("Score = "+score, scoreX, scoreY);
   text("HighScore = "+highScore, highScoreX,  highScoreY);
+  
 }
 
 //This creates the character
@@ -185,6 +187,7 @@ void charMove()
 //Here is where gems are displayed
 void gemDisplay()
 {
-  coin.gemMapping();
+  coin.gemMapping1();
+  coin.gemScore1();
   
 }
