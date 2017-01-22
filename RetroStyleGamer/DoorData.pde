@@ -52,5 +52,16 @@ class DoorData
     rect(doorX2, doorY2B, doorSizeH, doorSizeW);
   }
   
+  //This section triggers the next map if the character comes into contact
+  //if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
+  void doorPosRTrigger()
+  {
+    if(charX <= doorX1B+50 && charX >= doorX1B-50 && charY <= doorY1+80 && charY >= doorY1-80)
+    {
+      map = 2;
+      charX =450;
+      charY = 400;
+    }
+  }
 
 }

@@ -123,6 +123,7 @@ void startGame()
 void mapping()
 {
   fill(mapColourR, mapColourG, mapColourB);
+  
   stroke(0);
   
   for(int i=0; i<9; i++)
@@ -196,8 +197,20 @@ void mapDisplay()
     {
       coin.gemMapping1();
       coin.gemScore1();
-      door.doorPosL();
       door.doorPosR();
+      door.doorPosB();
+      door.doorPosRTrigger();
+      break;
+    }
+    
+    case(2):
+    {
+      //Change colours
+      mapColourR = 0;
+      mapColourG = 255;
+      mapColourB = 0;
+      coin.gemMapping1();
+      coin.gemScore1();
       door.doorPosT();
       door.doorPosB();
       break;
