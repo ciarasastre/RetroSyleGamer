@@ -53,10 +53,42 @@ class DoorData
   }
   
   //This section triggers the next map if the character comes into contact
-  //if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
+  
   void doorPosRTrigger()
   {
     if(charX <= doorX1B+50 && charX >= doorX1B-50 && charY <= doorY1+80 && charY >= doorY1-80)
+    {
+      map = 2;
+      charX =450;
+      charY = 400;
+    }
+  }
+  
+  void doorPosLTrigger()
+  {
+    if(charX <= doorX1A+50 && charX >= doorX1A-50 && charY <= doorY1+80 && charY >= doorY1-80)
+    {
+      map = 2;
+      charX = 450;
+      charY = 400;
+    }
+  }
+  
+  void doorPosTTrigger()
+  {
+    //doorX2 = 370, doorY2A = 0,
+    if(charX <= doorX2+130 && charX >= doorX2+30 && charY <= doorY2A+80 && charY >= doorY2A)
+    {
+      map = 2;
+      charX = 450;
+      charY = 400;
+    }
+  }
+  
+  void doorPosBTrigger()
+  {
+    //doorX2, doorY2B
+    if(charX <= doorX2+130 && charX >= doorX2+30 && charY <= doorY2B+80 && charY >= doorY2B)
     {
       map = 2;
       charX =450;

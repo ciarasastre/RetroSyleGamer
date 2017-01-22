@@ -199,7 +199,12 @@ void mapDisplay()
       coin.gemScore1();
       door.doorPosR();
       door.doorPosB();
+      door.doorPosT();
+      door.doorPosL();
       door.doorPosRTrigger();
+      door.doorPosLTrigger();
+      door.doorPosTTrigger();
+      door.doorPosBTrigger();
       break;
     }
     
