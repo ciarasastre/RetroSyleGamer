@@ -117,6 +117,7 @@ class DoorData
     //doorX2, doorY2B
     if(charX <= doorX2+130 && charX >= doorX2+30 && charY <= doorY2B+80 && charY >= doorY2B)
     {
+      //If you are on map 3
       if(map == 3)
       {
         map = 4;
@@ -125,6 +126,7 @@ class DoorData
       {
         map = 5;
       }
+      
       
       //Reposition Character
       charX =450;

@@ -267,6 +267,34 @@ void mapDisplay()
       door.doorPosTTrigger();
       break;
     }
+    
+    case(6):
+    {
+      //Change colour to GREEN
+      mapColourR = 0;
+      mapColourG = 255;
+      mapColourB = 0;
+      
+      door.doorPosT();
+      door.doorPosB();
+      
+      door.doorPosTTrigger();
+      door.doorPosBTrigger();
+      break;
+    }
+    
+    case(7):
+    {
+      //Change colour to YELLOW
+      mapColourR = 240;
+      mapColourG = 255;
+      mapColourB = 77;
+
+      door.doorPosT();
+      
+      door.doorPosTTrigger();
+      break;
+    }
   }//End switch
   
 }
