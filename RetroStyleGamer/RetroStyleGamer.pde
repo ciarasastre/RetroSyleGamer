@@ -195,31 +195,78 @@ void mapDisplay()
   {
     case(1):
     {
+      //Change colour to PINK
+      mapColourR = 242;
+      mapColourG = 144;
+      mapColourB = 255;
+      
       coin.gemMapping1();
       coin.gemScore1();
       door.doorPosR();
       door.doorPosB();
-      door.doorPosT();
-      door.doorPosL();
+      
       door.doorPosRTrigger();
-      door.doorPosLTrigger();
-      door.doorPosTTrigger();
       door.doorPosBTrigger();
       break;
     }
     
     case(2):
     {
-      //Change colours
+      //Change colour to GREEN
       mapColourR = 0;
       mapColourG = 255;
       mapColourB = 0;
-      coin.gemMapping1();
-      coin.gemScore1();
-      door.doorPosT();
-      door.doorPosB();
+      
+      door.doorPosL();
+      door.doorPosR();
+      
+      door.doorPosLTrigger();
+      door.doorPosRTrigger();
       break;
     }
-  }
+    
+    case(3):
+    {
+      //Change colour to PINK
+      mapColourR = 242;
+      mapColourG = 144;
+      mapColourB = 255;
+      
+      door.doorPosL();
+      door.doorPosB();
+      
+      door.doorPosLTrigger();
+      door.doorPosBTrigger();
+      break;
+    }
+    
+    case(4):
+    {
+      //Change colour to GREEN
+      mapColourR = 0;
+      mapColourG = 255;
+      mapColourB = 0;
+      
+      door.doorPosT();
+      door.doorPosB();
+      
+      door.doorPosTTrigger();
+      door.doorPosBTrigger();
+      break;
+    }
+    
+    case(5):
+    {
+      //Change colour to YELLOW
+      mapColourR = 240;
+      mapColourG = 255;
+      mapColourB = 77;
+
+      door.doorPosT();
+      
+      door.doorPosTTrigger();
+      break;
+    }
+  }//End switch
   
 }

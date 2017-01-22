@@ -58,7 +58,16 @@ class DoorData
   {
     if(charX <= doorX1B+50 && charX >= doorX1B-50 && charY <= doorY1+80 && charY >= doorY1-80)
     {
-      map = 2;
+      if(map == 1)
+      {
+        map = 2;
+      }
+      else
+      {
+        map = 3;
+      }
+      
+      //Reposition Character
       charX =450;
       charY = 400;
     }
@@ -68,7 +77,16 @@ class DoorData
   {
     if(charX <= doorX1A+50 && charX >= doorX1A-50 && charY <= doorY1+80 && charY >= doorY1-80)
     {
-      map = 2;
+      if(map == 3)
+      {
+        map = 2;
+      }
+      else
+      {
+        map = 1;
+      }
+      
+      //Reposition Character
       charX = 450;
       charY = 400;
     }
@@ -79,7 +97,16 @@ class DoorData
     //doorX2 = 370, doorY2A = 0,
     if(charX <= doorX2+130 && charX >= doorX2+30 && charY <= doorY2A+80 && charY >= doorY2A)
     {
-      map = 2;
+      if(map == 5)
+      {
+        map = 4;
+      }
+      else
+      {
+        map = 3;
+      }
+      
+      //Reposition Character
       charX = 450;
       charY = 400;
     }
@@ -90,7 +117,16 @@ class DoorData
     //doorX2, doorY2B
     if(charX <= doorX2+130 && charX >= doorX2+30 && charY <= doorY2B+80 && charY >= doorY2B)
     {
-      map = 2;
+      if(map == 3)
+      {
+        map = 4;
+      }
+      else
+      {
+        map = 5;
+      }
+      
+      //Reposition Character
       charX =450;
       charY = 400;
     }
