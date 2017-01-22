@@ -196,6 +196,8 @@ void mapDisplay()
     {
       coin.gemMapping1();
       coin.gemScore1();
+      door.doorPosL();
+      door.doorPosR();
       break;
     }
   }
