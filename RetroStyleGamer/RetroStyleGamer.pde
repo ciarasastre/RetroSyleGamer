@@ -26,6 +26,7 @@ int score = 0;
 int highScoreX = 10;
 int highScoreY = 60;
 int highScore = 0;
+int time = 0;
 
 //Character Variables
 int charX = 450;
@@ -154,6 +155,15 @@ void score()
   if(score >= highScore)
   {
     highScore = score;
+  }
+  
+  //Coins deplete every second
+  time++;
+  
+  if(time >= 100)
+  {
+    score--;
+    time = 0 ;
   }
   
 }
