@@ -97,14 +97,33 @@ class DoorData
     //doorX2 = 370, doorY2A = 0,
     if(charX <= doorX2+130 && charX >= doorX2+30 && charY <= doorY2A+80 && charY >= doorY2A)
     {
-      if(map == 5)
+      switch(map)
       {
-        map = 4;
-      }
-      else
-      {
-        map = 3;
-      }
+        case(7):
+        {
+          map = 6;
+          break;
+        }
+        
+        case(6):
+        {
+          map = 1;
+          break;
+        }
+        
+        case(5):
+        {
+          map = 4;
+          break;
+        }
+        
+        case(4):
+        {
+          map = 3;
+          break;
+        }
+        
+      }//end switch
       
       //Reposition Character
       charX = 450;
@@ -117,14 +136,32 @@ class DoorData
     //doorX2, doorY2B
     if(charX <= doorX2+130 && charX >= doorX2+30 && charY <= doorY2B+80 && charY >= doorY2B)
     {
-      //If you are on map 3
-      if(map == 3)
+      //Because there are more than 2 options we need a switchstate
+      switch(map)
       {
-        map = 4;
-      }
-      else
-      {
-        map = 5;
+        case(1):
+        {
+          map = 6;
+          break;
+        }
+        
+        case(3):
+        {
+          map = 4;
+          break;
+        }
+        
+        case(4):
+        {
+          map = 5;
+          break;
+        }
+        
+        case(6):
+        {
+          map = 7;
+          break;
+        }
       }
       
       
