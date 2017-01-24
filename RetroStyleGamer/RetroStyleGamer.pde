@@ -22,10 +22,10 @@ int map = 1;
 //Score Variables
 int scoreX = 10;
 int scoreY = 30;
-int score = 100;
+int score = 0;
 int highScoreX = 10;
 int highScoreY = 60;
-int highScore = 120;
+int highScore = 0;
 
 //Character Variables
 int charX = 450;
@@ -149,6 +149,12 @@ void score()
   textSize(30);
   text("Score = "+score, scoreX, scoreY);
   text("HighScore = "+highScore, highScoreX,  highScoreY);
+  
+  // Highscore 
+  if(score >= highScore)
+  {
+    highScore = score;
+  }
   
 }
 
