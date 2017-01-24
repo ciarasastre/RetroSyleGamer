@@ -34,6 +34,10 @@ int charY = 400;
 int charSize = 20;
 int charSpeed = 10;
 
+//Bullet Variables
+int bullX = 450;
+int bullY = 400;
+int bullSize = 5;
 //Array for Gems
 ArrayList<GemData> coins = new ArrayList<GemData>();
 
@@ -181,6 +185,7 @@ void charMove()
 {
   if(keyPressed)
   {
+    
     if(keyCode == RIGHT)
     {
       charX += charSpeed;
@@ -201,6 +206,18 @@ void charMove()
       charY += charSpeed;
     }
     
+    //This section is for shooting
+    if(key == ' ')
+    {
+      //ellipse(bullX, bullY, 10, 10);
+      //bullX += charSpeed+10;
+      
+      /* this creates 1 that moves across only when i hold down
+          try changing it to AWSD and turning BULLET into a class
+          Object so a new bullet can be called each time a button is pressed
+      */
+      
+    }
   }
 }
 
