@@ -26,6 +26,8 @@ class GemData
   int botClear2;
   int botClear3;
   
+  boolean test;
+  
   float randX[] = {50, 150, 250, 350, 450, 550, 650, 750, 850};
   float randY[] = {80, 240, 400, 560, 720};
 
@@ -42,6 +44,8 @@ class GemData
     
     xVal = 50;
     yVal = 80;
+    
+    test = true;
 
   }
   
@@ -139,61 +143,71 @@ class GemData
     //Top Section
     if(charX <= randX[2]+xVal && charX >= randX[2]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
     {
-      score = score + 1;
       topClear1 = 1; 
+      
+      if(test == true)
+      {
+        score(); // = score + 1;
+      }
+      
+      test = false;
     }
     
     if(charX <= randX[3]+xVal && charX >= randX[3]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
     {
-      score = score + 1;
+      //score();
       topClear2 = 1; 
     }
     
     if(charX <= randX[4]+xVal && charX >= randX[4]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
     {
-      score = score + 1;
+      //score();
       topClear3 = 1; 
     }
     
     //Mid Section
     if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
     {
-      score = score + 1;
+      //score();
       midClear1 = 1; 
     }
     
     if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[2]+yVal && charY >= randY[2]-yVal)
     {
-      score = score + 1;
+      //score();
       midClear2 = 1; 
     }
     
     if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
     {
-      score = score + 1;
+      //score();
       midClear3 = 1; 
     }
     
     //Bot Section
     if(charX <= randX[2]+xVal && charX >= randX[2]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
     {
-      score = score + 1;
+      //score();
       botClear1 = 1; 
     }
     
     if(charX <= randX[3]+xVal && charX >= randX[3]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
     {
-      score = score + 1;
+      //score();
       botClear2 = 1; 
     }
     
     if(charX <= randX[4]+xVal && charX >= randX[4]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
     {
-      score = score + 1;
+      //score();
       botClear3 = 1; 
     }
-    
-    
+
+  }
+  
+  void score()
+  {
+    score++;
   }
   
 }
