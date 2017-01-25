@@ -6,6 +6,7 @@
 //CLASSES
 GemData coin;
 DoorData door;
+BulletData pewpew;
 
 int gameScreen = 0;
 
@@ -46,6 +47,7 @@ void setup()
   size(900,800); //Width and Height
   coin = new GemData();
   door = new DoorData();
+  pewpew = new BulletData();
   
 }
 
@@ -95,6 +97,7 @@ void gameScreen()
   character();
   charMove();
   mapDisplay();
+  bullets();
   
 }
 
@@ -206,18 +209,6 @@ void charMove()
       charY += charSpeed;
     }
     
-    //This section is for shooting
-    if(key == ' ')
-    {
-      //ellipse(bullX, bullY, 10, 10);
-      //bullX += charSpeed+10;
-      
-      /* this creates 1 that moves across only when i hold down
-          try changing it to AWSD and turning BULLET into a class
-          Object so a new bullet can be called each time a button is pressed
-      */
-      
-    }
   }
 }
 
@@ -330,4 +321,20 @@ void mapDisplay()
     }
   }//End switch
   
+}
+
+void bullets()
+{
+      //This section is for shooting
+    
+      pewpew.pewPew();
+      pewpew.pewPewLeft();
+      
+      
+      /* this creates 1 that moves across only when i hold down
+          try changing it to AWSD and turning BULLET into a class
+          Object so a new bullet can be called each time a button is pressed
+      */
+      
+    
 }
