@@ -6,7 +6,7 @@
 //CLASSES
 GemData coin;
 DoorData door;
-BulletData pewpew;
+BulletData bullet;
 
 int gameScreen = 0;
 
@@ -47,7 +47,7 @@ void setup()
   size(900,800); //Width and Height
   coin = new GemData();
   door = new DoorData();
-  pewpew = new BulletData();
+  bullet = new BulletData();
   
 }
 
@@ -326,9 +326,8 @@ void mapDisplay()
 void bullets()
 {
       //This section is for shooting
-    
-      pewpew.pewPew();
-      pewpew.pewPewLeft();
+      bullet.display();
+      bullet.shootLeft();
       
       
       /* this creates 1 that moves across only when i hold down
