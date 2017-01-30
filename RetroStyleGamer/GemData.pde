@@ -1,20 +1,17 @@
 class GemData 
 {
   //Declare datatypes here
-
   int gemVal; //coins = 1
   int gemSize;
   
-  boolean state; // 1=alive 0=dead
-  
   int xVal;
   int yVal;
-  
-  boolean available;
-  boolean dead;
-  
   int x;
   int y;
+  
+  boolean state; 
+  boolean available;
+  boolean dead = false;
   
   GemData(int xGive, int yGive)
   {
@@ -28,7 +25,6 @@ class GemData
     yVal = 80;
     
     available = true;
-    dead = false;
 
   }
   
@@ -47,7 +43,9 @@ class GemData
           fill(252,232,5);
           ellipse(x,y, gemSize, gemSize); 
         }
+        
       }
+      
   }
   
   void gemScore()

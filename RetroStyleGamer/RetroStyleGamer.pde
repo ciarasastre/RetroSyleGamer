@@ -20,6 +20,7 @@ int mapColourR = 242;
 int mapColourG = 144;
 int mapColourB = 255;
 int map = 1;
+boolean newMap = false;
 
 //Score Variables
 int scoreX = 10;
@@ -36,7 +37,7 @@ int charY = 400;
 int charSize = 20;
 int charSpeed = 10;
 
-
+int extra = 0;
 void setup()
 {
   size(900,800); //Width and Height
@@ -44,7 +45,6 @@ void setup()
   door = new DoorData();
   bullet = new BulletData();
   
-  //Set Top coins
   coin[0] = new GemData(150,240);
   coin[1] = new GemData(250,240);
   coin[2] = new GemData(350,240);
@@ -245,41 +245,20 @@ void mapDisplay()
       mapColourR = 242;
       mapColourG = 144;
       mapColourB = 255;
-
-      coin[0].gemPos();
-      coin[1].gemPos();
-      coin[2].gemPos();
       
-      coin[0].gemScore();
-      coin[1].gemScore();
-      coin[2].gemScore();
-      coin[3].gemScore();
-      coin[4].gemScore();
-      coin[5].gemScore();
+      //Coin Distribution
+      for(int i =0; i<21; i++)
+      {
+          coin[i].gemPos();
+        
+      }
       
-      coin[3].gemPos();
-      coin[4].gemPos();
-      coin[5].gemPos();
-      coin[6].gemPos();
+      for(int i =0; i<21; i++)
+      {
+        coin[i].gemScore();
+      }
       
-      coin[7].gemPos();
-      coin[8].gemPos();
-      coin[9].gemPos();
-      coin[10].gemPos();
-      coin[11].gemPos();
-      coin[12].gemPos();
-      coin[13].gemPos();
-      
-      coin[14].gemPos();
-      coin[15].gemPos();
-      coin[16].gemPos();
-      coin[17].gemPos();
-      coin[18].gemPos();
-      coin[19].gemPos();
-      coin[20].gemPos();
-      
-      
-      //coin.gemScore1();
+      //Door Section
       door.doorPosR();
       door.doorPosB();
       
@@ -294,6 +273,13 @@ void mapDisplay()
       mapColourR = 0;
       mapColourG = 255;
       mapColourB = 0;
+      
+      //Coin Distribution
+      coin[0].gemPos();
+      coin[6].gemPos();
+      coin[14].gemPos();
+      coin[20].gemPos();
+      
       
       door.doorPosL();
       door.doorPosR();
@@ -352,6 +338,12 @@ void mapDisplay()
       mapColourR = 0;
       mapColourG = 255;
       mapColourB = 0;
+      
+      //Coin Distribution
+      coin[0].gemPos();
+      coin[6].gemPos();
+      coin[14].gemPos();
+      coin[20].gemPos();
       
       door.doorPosT();
       door.doorPosB();
