@@ -7,10 +7,10 @@
 DoorData door;
 BulletData bullet;
 
-GemData[] coin = new GemData[21]; //2
+GemData[] coin = new GemData[21]; 
 
 int gameScreen = 0;
-int num = 0;
+
 //Mapping Variables
 int startX= 0;
 int startY= 0;
@@ -36,10 +36,6 @@ int charY = 400;
 int charSize = 20;
 int charSpeed = 10;
 
-//Bullet Variables
-int bullX = 450;
-int bullY = 400;
-int bullSize = 5;
 
 void setup()
 {
@@ -48,7 +44,7 @@ void setup()
   door = new DoorData();
   bullet = new BulletData();
   
-  //Set up top coins
+  //Set Top coins
   coin[0] = new GemData(150,240);
   coin[1] = new GemData(250,240);
   coin[2] = new GemData(350,240);
@@ -57,7 +53,7 @@ void setup()
   coin[5] = new GemData(650,240);
   coin[6] = new GemData(750,240);
   
-  //Set up mid coins
+  //Set Middle coins
   coin[7] = new GemData(150,400);
   coin[8] = new GemData(250,400);
   coin[9] = new GemData(350,400);
@@ -66,7 +62,7 @@ void setup()
   coin[12] = new GemData(650,400);
   coin[13] = new GemData(750,400);
   
-  //Set up Bot coins
+  //Set Bottom coins
   coin[14] = new GemData(150,560);
   coin[15] = new GemData(250,560);
   coin[16] = new GemData(350,560);
@@ -256,6 +252,10 @@ void mapDisplay()
       
       coin[0].gemScore();
       coin[1].gemScore();
+      coin[2].gemScore();
+      coin[3].gemScore();
+      coin[4].gemScore();
+      coin[5].gemScore();
       
       coin[3].gemPos();
       coin[4].gemPos();

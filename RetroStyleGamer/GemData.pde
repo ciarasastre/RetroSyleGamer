@@ -90,10 +90,8 @@ class GemData
   void gemScore()
   {
     //Top Section
-    if(charX <= randX[2]+xVal && charX >= randX[2]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
+    if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal)
     {
-      topClear1 = 1; 
-      
       //This makes sure no more than 1 coin gets added
       if(topCoin1 == true)
       {
@@ -101,98 +99,6 @@ class GemData
       }
       topCoin1 = false;
     }
-    
-    if(charX <= randX[3]+xVal && charX >= randX[3]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
-    {
-      topClear2 = 1; 
-      
-      if(topCoin2 == true)
-      {
-        score();
-      }
-      topCoin2 = false;
-    }
-    
-    if(charX <= randX[4]+xVal && charX >= randX[4]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
-    {
-      topClear3 = 1; 
-      
-      if(topCoin3 == true)
-      {
-        score();
-      }
-      topCoin3 = false;
-    }
-    
-    //Mid Section
-    if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
-    {
-      midClear1 = 1; 
-      
-      if(midCoin1 == true)
-      {
-        score();
-      }
-      midCoin1 = false;
-    }
-    
-    if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[2]+yVal && charY >= randY[2]-yVal)
-    {
-      midClear2 = 1; 
-      
-      if(midCoin2 == true)
-      {
-        score();
-      }
-      midCoin2 = false;
-    }
-    
-    if(charX <= randX[1]+xVal && charX >= randX[1]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
-    {
-      midClear3 = 1; 
-      
-      if(midCoin3 == true)
-      {
-        score();
-      }
-      midCoin3 = false;
-    }
-    
-    //Bot Section
-    if(charX <= randX[2]+xVal && charX >= randX[2]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
-    {
-      botClear1 = 1; 
-      
-      if(botCoin1 == true)
-      {
-        score();
-      }
-      botCoin1 = false;
-    }
-    
-    if(charX <= randX[3]+xVal && charX >= randX[3]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
-    {
-      botClear2 = 1; 
-      
-      if(botCoin2 == true)
-      {
-        score();
-      }
-      botCoin2 = false;
-    }
-    
-    if(charX <= randX[4]+xVal && charX >= randX[4]-xVal && charY <= randY[3]+yVal && charY >= randY[3]-yVal)
-    {
-      botClear3 = 1; 
-      
-      if(botCoin3 == true)
-      {
-        score();
-        erase();
-      }
-      botCoin3 = false;
-    }
-
   }
   
   void erase()

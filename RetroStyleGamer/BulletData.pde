@@ -9,8 +9,6 @@ class BulletData
     bullY = charY;
     bullX  = charX;
     bullSize = 10;
-    
-    
   }
   
   void display()
