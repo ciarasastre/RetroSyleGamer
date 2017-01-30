@@ -4,12 +4,13 @@
 */
 
 //CLASSES
-GemData coin;
 DoorData door;
 BulletData bullet;
 
-int gameScreen = 0;
+GemData[] coin = new GemData[21]; //2
 
+int gameScreen = 0;
+int num = 0;
 //Mapping Variables
 int startX= 0;
 int startY= 0;
@@ -39,15 +40,40 @@ int charSpeed = 10;
 int bullX = 450;
 int bullY = 400;
 int bullSize = 5;
-//Array for Gems
-ArrayList<GemData> coins = new ArrayList<GemData>();
 
 void setup()
 {
   size(900,800); //Width and Height
-  coin = new GemData();
+  
   door = new DoorData();
   bullet = new BulletData();
+  
+  //Set up top coins
+  coin[0] = new GemData(150,240);
+  coin[1] = new GemData(250,240);
+  coin[2] = new GemData(350,240);
+  coin[3] = new GemData(450,240);
+  coin[4] = new GemData(550,240);
+  coin[5] = new GemData(650,240);
+  coin[6] = new GemData(750,240);
+  
+  //Set up mid coins
+  coin[7] = new GemData(150,400);
+  coin[8] = new GemData(250,400);
+  coin[9] = new GemData(350,400);
+  coin[10] = new GemData(450,400);
+  coin[11] = new GemData(550,400);
+  coin[12] = new GemData(650,400);
+  coin[13] = new GemData(750,400);
+  
+  //Set up Bot coins
+  coin[14] = new GemData(150,560);
+  coin[15] = new GemData(250,560);
+  coin[16] = new GemData(350,560);
+  coin[17] = new GemData(450,560);
+  coin[18] = new GemData(550,560);
+  coin[19] = new GemData(650,560);
+  coin[20] = new GemData(750,560);
   
 }
 
@@ -94,11 +120,11 @@ void gameScreen()
   background(255);
   mapping();
   score();
-  character();
-  charMove();
+  
   mapDisplay();
   bullets();
-  
+  character();
+  charMove();
 }
 
 void gameOverScreen()
@@ -224,8 +250,36 @@ void mapDisplay()
       mapColourG = 144;
       mapColourB = 255;
       
-      coin.gemMapping1();
-      coin.gemScore1();
+      coin[0].gemPos();
+      coin[1].gemPos();
+      coin[2].gemPos();
+      
+      coin[0].gemScore();
+      coin[1].gemScore();
+      
+      coin[3].gemPos();
+      coin[4].gemPos();
+      coin[5].gemPos();
+      coin[6].gemPos();
+      
+      coin[7].gemPos();
+      coin[8].gemPos();
+      coin[9].gemPos();
+      coin[10].gemPos();
+      coin[11].gemPos();
+      coin[12].gemPos();
+      coin[13].gemPos();
+      
+      coin[14].gemPos();
+      coin[15].gemPos();
+      coin[16].gemPos();
+      coin[17].gemPos();
+      coin[18].gemPos();
+      coin[19].gemPos();
+      coin[20].gemPos();
+      
+      
+      //coin.gemScore1();
       door.doorPosR();
       door.doorPosB();
       

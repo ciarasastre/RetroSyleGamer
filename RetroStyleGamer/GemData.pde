@@ -9,7 +9,8 @@ class GemData
   int gemSize;
   
   int alive;
-  int dead;
+  boolean state; // 1=alive 0=dead
+  int refNum;
   
   int xVal;
   int yVal;
@@ -40,17 +41,20 @@ class GemData
   
   float randX[] = {50, 150, 250, 350, 450, 550, 650, 750, 850};
   float randY[] = {80, 240, 400, 560, 720};
-
-  GemData()
+  
+  int x;
+  int y;
+  
+  GemData(int xGive, int yGive)
   {
     //constuctors here
-    gemSize = 10;
-    
-    alive = 0;
-    dead  = 255;
+    gemSize = 45;
     
     randRow = random(1,9);
     randCol = random(1,5);
+    
+    x = xGive;
+    y = yGive;
     
     xVal = 50;
     yVal = 80;
@@ -66,99 +70,24 @@ class GemData
     botCoin1 = true;
     botCoin2 = true;
     botCoin3 = true;
+    
+    state = true;
 
   }
   
-  void gemMapping1()
+  // This section controls the coin created at each position
+  void gemPos()
   {
-    fill(alive);
-    
-    //Top Section
-    ellipse(randX[2], randY[1], gemSize, gemSize);
-    ellipse(randX[3], randY[1], gemSize, gemSize);
-    ellipse(randX[4], randY[1], gemSize, gemSize); //right here
-    
-    //Mid Section
-    ellipse(randX[1], randY[1], gemSize, gemSize);
-    ellipse(randX[1], randY[2], gemSize, gemSize);
-    ellipse(randX[1], randY[3], gemSize, gemSize);
-    
-    //Bot Section
-    ellipse(randX[2], randY[3], gemSize, gemSize);
-    ellipse(randX[3], randY[3], gemSize, gemSize);
-    ellipse(randX[4], randY[3], gemSize, gemSize);
-    
-    
-    //Top Section
-    if(topClear1 == 1)
-    {
-      fill(dead);
-      noStroke();
-      ellipse(randX[2], randY[1], gemSize, gemSize);
-    }
-    
-    if(topClear2 == 1)
-    {
-      fill(dead);
-      noStroke();
-      ellipse(randX[3], randY[1], gemSize, gemSize);
-    }
-    
-    if(topClear3 == 1)
-    {
-      fill(dead);
-      noStroke();
-      ellipse(randX[4], randY[1], gemSize, gemSize);
-    }
-    
-    //Mid Section
-    if(midClear1 == 1)
-    {
-      fill(dead);
-      noStroke();
-      ellipse(randX[1], randY[1], gemSize, gemSize);
-    }
-    
-    if(midClear2 == 1)
-    {
-      fill(dead);
-      noStroke();
-      ellipse(randX[1], randY[2], gemSize, gemSize);
-    }
-    
-    if(midClear3 == 1)
-    {
-      fill(dead);
-      noStroke();
-      ellipse(randX[1], randY[3], gemSize, gemSize);
-    }
-    
-    //Bot Section
-    if(botClear1 == 1)
-    {
-      fill(dead);
-      noStroke();
-      ellipse(randX[2], randY[3], gemSize, gemSize);
-    }
-    
-    if(botClear2 == 1)
-    {
-      fill(dead);
-      noStroke();
-      ellipse(randX[3], randY[3], gemSize, gemSize);
-    }
-    
-    
-    if(botClear3 == 1)
-    {
-      fill(dead);
-      noStroke();
-      ellipse(randX[4], randY[3], gemSize, gemSize);
-    }
+      fill(252,232,5);
+      ellipse(x,y, gemSize, gemSize); 
+  }
+  
+  void gemState()
+  {
     
   }
   
-  void gemScore1()
+  void gemScore()
   {
     //Top Section
     if(charX <= randX[2]+xVal && charX >= randX[2]-xVal && charY <= randY[1]+yVal && charY >= randY[1]-yVal)
@@ -259,12 +188,18 @@ class GemData
       if(botCoin3 == true)
       {
         score();
+        erase();
       }
       botCoin3 = false;
     }
 
   }
   
+  void erase()
+  {
+    fill(0);
+    ellipse(x,y,gemSize, gemSize);
+  }
   void score()
   {
     score++;
