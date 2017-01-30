@@ -27,17 +27,7 @@ class GemData
   int botClear2;
   int botClear3;
   
-  boolean topCoin1;
-  boolean topCoin2;
-  boolean topCoin3;
-  
-  boolean midCoin1;
-  boolean midCoin2;
-  boolean midCoin3;
-  
-  boolean botCoin1;
-  boolean botCoin2;
-  boolean botCoin3;
+  boolean available;
   
   float randX[] = {50, 150, 250, 350, 450, 550, 650, 750, 850};
   float randY[] = {80, 240, 400, 560, 720};
@@ -59,18 +49,7 @@ class GemData
     xVal = 50;
     yVal = 80;
     
-    topCoin1 = true;
-    topCoin2 = true;
-    topCoin3 = true;
-  
-    midCoin1 = true;
-    midCoin2 = true;
-    midCoin3 = true;
-  
-    botCoin1 = true;
-    botCoin2 = true;
-    botCoin3 = true;
-    
+    available = true;
     state = true;
 
   }
@@ -82,30 +61,27 @@ class GemData
       ellipse(x,y, gemSize, gemSize); 
   }
   
-  void gemState()
-  {
-    
-  }
-  
   void gemScore()
   {
-    //Top Section
+    //Checks if character goes over coin AND gives player 1 point
     if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal)
     {
       //This makes sure no more than 1 coin gets added
-      if(topCoin1 == true)
+      if(available == true)
       {
         score();
+        //erase();
       }
-      topCoin1 = false;
+      available = false;
     }
   }
   
   void erase()
   {
-    fill(0);
+    fill(0,255,0);
     ellipse(x,y,gemSize, gemSize);
   }
+  
   void score()
   {
     score++;

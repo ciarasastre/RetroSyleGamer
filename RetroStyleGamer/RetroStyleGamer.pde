@@ -245,7 +245,7 @@ void mapDisplay()
       mapColourR = 242;
       mapColourG = 144;
       mapColourB = 255;
-      
+
       coin[0].gemPos();
       coin[1].gemPos();
       coin[2].gemPos();
