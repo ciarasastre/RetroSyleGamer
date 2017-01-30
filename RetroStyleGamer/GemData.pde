@@ -11,6 +11,7 @@ class GemData
   int yVal;
   
   boolean available;
+  boolean dead;
   
   int x;
   int y;
@@ -27,14 +28,26 @@ class GemData
     yVal = 80;
     
     available = true;
+    dead = false;
 
   }
   
   // This section controls the coin created at each position
   void gemPos()
   {
-      fill(252,232,5);
-      ellipse(x,y, gemSize, gemSize); 
+      //If the character has passed through the coin it dissapears
+      if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal)
+      {
+        dead = true;
+      }
+      else
+      {
+        if(dead == false)
+        {
+          fill(252,232,5);
+          ellipse(x,y, gemSize, gemSize); 
+        }
+      }
   }
   
   void gemScore()
@@ -50,12 +63,6 @@ class GemData
       }
       available = false;
     }
-  }
-  
-  void erase()
-  {
-    fill(0,255,0);
-    ellipse(x,y,gemSize, gemSize);
   }
   
   void score()
