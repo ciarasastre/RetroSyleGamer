@@ -1,47 +1,24 @@
 class GemData 
 {
   //Declare datatypes here
-  float randRow;
-  float randCol;
-  float randChooseX;
-  
+
   int gemVal; //coins = 1
   int gemSize;
   
-  int alive;
   boolean state; // 1=alive 0=dead
-  int refNum;
   
   int xVal;
   int yVal;
   
-  int topClear1;
-  int topClear2;
-  int topClear3;
-  
-  int midClear1;
-  int midClear2;
-  int midClear3;
-  
-  int botClear1;
-  int botClear2;
-  int botClear3;
-  
   boolean available;
-  
-  float randX[] = {50, 150, 250, 350, 450, 550, 650, 750, 850};
-  float randY[] = {80, 240, 400, 560, 720};
   
   int x;
   int y;
   
   GemData(int xGive, int yGive)
   {
-    //constuctors here
+    //Constuctors here
     gemSize = 45;
-    
-    randRow = random(1,9);
-    randCol = random(1,5);
     
     x = xGive;
     y = yGive;
@@ -50,7 +27,6 @@ class GemData
     yVal = 80;
     
     available = true;
-    state = true;
 
   }
   
