@@ -5,8 +5,9 @@
 
 //CLASSES
 DoorData door;
-BulletData bullet;
+//BulletData bullet;
 
+ArrayList<BulletData> bullets; //this is where our bullets will be stored
 GemData[] coin = new GemData[21]; 
 
 int gameScreen = 0;
@@ -43,7 +44,8 @@ void setup()
   size(900,800); //Width and Height
   
   door = new DoorData();
-  bullet = new BulletData();
+  
+  bullets = new ArrayList();
   
   coin[0] = new GemData(150,240);
   coin[1] = new GemData(250,240);
@@ -118,9 +120,13 @@ void gameScreen()
   score();
   
   mapDisplay();
-  bullets();
+  //bullets();
   character();
   charMove();
+  
+  moveAllBull();
+  displayAllBull();
+  Arrow();
 }
 
 void gameOverScreen()
@@ -369,17 +375,28 @@ void mapDisplay()
   
 }
 
-void bullets()
+void moveAllBull()
 {
-      //This section is for shooting
-      bullet.display();
-      bullet.shootLeft();
-      
-      
-      /* this creates 1 that moves across only when i hold down
-          try changing it to AWSD and turning BULLET into a class
-          Object so a new bullet can be called each time a button is pressed
-      */
-      
-    
+  for(BulletData temp : bullets)
+  {
+    temp.shootLeft();
+  }
+}
+  
+void displayAllBull()
+{
+  for(BulletData temp : bullets)
+  {
+     temp.display(); 
+  }
+}
+
+void Arrow()//mousePressed()//add a new bullet if mouse is clicked
+{
+  if(key == 'a')
+    {
+      BulletData temp = new BulletData(charX, charY);
+      bullets.add(temp);
+    }
+  
 }

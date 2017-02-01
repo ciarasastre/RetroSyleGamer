@@ -1,13 +1,13 @@
 class BulletData
 {
-  int bullX;
-  int bullY;
+  float bullX;
+  float bullY;
   int bullSize;
   
-  BulletData()
+  BulletData(float giveX, float giveY)
   {
-    bullY = charY;
-    bullX  = charX;
+    bullY = giveY;
+    bullX  = giveX;
     bullSize = 10;
   }
   
@@ -20,10 +20,8 @@ class BulletData
   
   void shootLeft()
   {
-    if(key == 'a')
-    {
-      bullX--;
-    }
+
+      bullX-=15;
   }
   
 }
