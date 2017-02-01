@@ -21,7 +21,8 @@ class BulletData
   void shootLeft()
   {
 
-      bullX-=15;
+      bullY-=15;
   }
+
   
 }

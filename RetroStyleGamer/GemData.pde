@@ -1,4 +1,4 @@
-class GemData 
+class GemData
 {
   //Declare datatypes here
   int gemVal; //coins = 1
@@ -32,9 +32,10 @@ class GemData
   void gemPos()
   {
       //If the character has passed through the coin it dissapears
-      if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal)
+      if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal && newMap == true)
       {
-        dead = true;
+          dead = true;  
+          
       }
       else
       {
@@ -42,9 +43,11 @@ class GemData
         {
           fill(252,232,5);
           ellipse(x,y, gemSize, gemSize); 
+          
         }
         
       }
+      
       
   }
   

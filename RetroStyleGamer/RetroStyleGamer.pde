@@ -120,13 +120,12 @@ void gameScreen()
   score();
   
   mapDisplay();
-  //bullets();
   character();
   charMove();
   
-  moveAllBull();
+  moveBL();
   displayAllBull();
-  Arrow();
+  bulletControls();
 }
 
 void gameOverScreen()
@@ -247,6 +246,7 @@ void mapDisplay()
   {
     case(1):
     {
+      newMap = true;
       //Change colour to PINK
       mapColourR = 242;
       mapColourG = 144;
@@ -275,6 +275,7 @@ void mapDisplay()
     
     case(2):
     {
+      newMap = true;
       //Change colour to GREEN
       mapColourR = 0;
       mapColourG = 255;
@@ -375,14 +376,14 @@ void mapDisplay()
   
 }
 
-void moveAllBull()
+void moveBL() //Move Bullets Left
 {
   for(BulletData temp : bullets)
   {
-    temp.shootLeft();
+     temp.shootLeft();
   }
 }
-  
+
 void displayAllBull()
 {
   for(BulletData temp : bullets)
@@ -391,12 +392,15 @@ void displayAllBull()
   }
 }
 
-void Arrow()//mousePressed()//add a new bullet if mouse is clicked
+void bulletControls()//mousePressed()//add a new bullet if mouse is clicked
 {
-  if(key == 'a')
+  if(keyPressed)
+  {
+    if(key == ' ')
     {
       BulletData temp = new BulletData(charX, charY);
       bullets.add(temp);
     }
+  }
   
 }
