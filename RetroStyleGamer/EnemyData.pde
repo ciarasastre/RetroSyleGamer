@@ -14,11 +14,17 @@ class EnemyData
   void enDisplay()
   {
     fill(255);
-    rect(enX, enY, enSize, enSize); 
+    rect(enX, enY, enSize, enSize/2); 
   }
   
   void enMove()
   {
+    if(enX == 300)
+    {
+      enX++;
+    }
+    
+
     
   }
 }
