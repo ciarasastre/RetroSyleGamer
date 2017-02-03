@@ -5,7 +5,7 @@
 
 //CLASSES
 DoorData door;
-//BulletData bullet;
+EnemyData boss;
 
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 GemData[] coin = new GemData[21]; 
@@ -44,6 +44,7 @@ void setup()
   size(900,800); //Width and Height
   
   door = new DoorData();
+  boss = new EnemyData();
   
   bullets = new ArrayList();
   
@@ -357,6 +358,7 @@ void mapDisplay()
       
       door.doorPosTTrigger();
       door.doorPosBTrigger();
+      
       break;
     }
     
@@ -370,6 +372,9 @@ void mapDisplay()
       door.doorPosT();
       
       door.doorPosTTrigger();
+      
+      boss.enDisplay();
+      boss.enMove();
       break;
     }
   }//End switch
