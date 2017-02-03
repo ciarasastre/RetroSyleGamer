@@ -1,15 +1,15 @@
 class EnemyData
 {
-  int enX;
-  int enY;
-  int enSize;
+  int enX = 300;
+  int enY = 620;
+  int enSize = 300;
   
-  EnemyData()
+  /*EnemyData()
   {
     enX = 300;
     enY = 620;
     enSize = 300;
-  }
+  }*/
   
   void enDisplay()
   {
@@ -19,12 +19,6 @@ class EnemyData
   
   void enMove()
   {
-    if(enX == 300)
-    {
-      enX++;
-    }
-    
-
-    
+    enX++;
   }
 }
