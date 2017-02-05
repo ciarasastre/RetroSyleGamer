@@ -1,5 +1,7 @@
 class GemData
 {
+  PImage coin;
+  
   //Declare datatypes here
   int gemVal; //coins = 1
   int gemSize;
@@ -8,7 +10,7 @@ class GemData
   int yVal;
   int x;
   int y;
-  
+  int center;
   boolean state; 
   boolean available;
   boolean dead = false;
@@ -16,7 +18,7 @@ class GemData
   GemData(int xGive, int yGive)
   {
     //Constuctors here
-    gemSize = 45;
+    gemSize = 70;
     
     x = xGive;
     y = yGive;
@@ -25,7 +27,8 @@ class GemData
     yVal = 80;
     
     available = true;
-
+    
+    coin = loadImage("coin0.png");
   }
   
   // This section controls the coin created at each position
@@ -41,8 +44,11 @@ class GemData
       {
         if(dead == false)
         {
-          fill(252,232,5);
-          ellipse(x,y, gemSize, gemSize); 
+          
+          /*fill(252,232,5);
+          ellipse(x,y, gemSize, gemSize); */
+          
+          image(coin, x-50, y-90);
           
         }
         
@@ -60,7 +66,7 @@ class GemData
       if(available == true)
       {
         score();
-        //erase();
+        
       }
       available = false;
     }
