@@ -9,6 +9,7 @@ EnemyData boss;
 
 PImage[] manFront = new PImage[3];
 PImage[] manLeft = new PImage[3];
+PImage[] manRight= new PImage[3];
 
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 GemData[] coin = new GemData[21]; 
@@ -221,6 +222,11 @@ void charLoad()
     manLeft[i] = loadImage("leftManW"+i+".png");
   }
   
+  for(int i = 0; i<manRight.length; i++)
+  {
+    manRight[i] = loadImage("rightManW"+i+".png");
+  }
+  
 }
 
 //Moves Character
@@ -232,6 +238,29 @@ void charMove()
     if(keyCode == RIGHT)
     {
       charX += charSpeed;
+      
+      if(charIndex == manRight.length-1)
+      {
+        charTime+=1;
+        
+        if(charTime == 10)
+        {
+          charIndex = 0;
+          charTime = 0;
+        }
+      }
+      else
+      {
+        charTime+=1;
+        
+        if(charTime == 10)
+        {
+          charIndex++;
+          charTime = 0;
+        }
+      }
+      image(manRight[charIndex],charX,charY);
+    
     }
     
     if(keyCode == LEFT)
