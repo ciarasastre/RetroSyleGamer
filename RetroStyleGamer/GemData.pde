@@ -45,9 +45,6 @@ class GemData
         if(dead == false)
         {
           
-          /*fill(252,232,5);
-          ellipse(x,y, gemSize, gemSize); */
-          
           image(coin, x-50, y-90);
           
         }

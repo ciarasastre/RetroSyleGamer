@@ -6,6 +6,7 @@
 //CLASSES
 DoorData door;
 EnemyData boss;
+PowerUpData item;
 
 PImage[] manFront = new PImage[3];
 PImage[] manLeft = new PImage[3];
@@ -52,6 +53,7 @@ void setup()
   
   door = new DoorData();
   boss = new EnemyData();
+  item = new PowerUpData();
   
   bullets = new ArrayList();
   
@@ -429,6 +431,7 @@ void mapDisplay()
       mapColourG = 144;
       mapColourB = 255;
       
+      item.coffeeDisplay();
       door.doorPosL();
       door.doorPosB();
       

@@ -2,20 +2,24 @@ class EnemyData
 {
   PImage[] bossLeft = new PImage[3];
   
-  int enX = -300;
-  int enY = 620;
-  int enSize = 300;
-  int enSpeed = 4;
+  int enX;
+  int enY;
+  int enSize;
+  int enSpeed;
   
-  int bossTime = 0;
-  int bossIndex = 0;
+  int bossTime;
+  int bossIndex;
 
-  /*EnemyData()
+  EnemyData()
   {
-    enX = 300;
+    enX = -300;
     enY = 620;
     enSize = 300;
-  }*/
+    enSpeed = 4;
+    
+    bossTime = 0;
+    bossIndex = 0;
+  }
   
   void enDisplay()
   {
@@ -46,10 +50,6 @@ class EnemyData
         }
       }
       image(bossLeft[bossIndex],enX,enY);
-    
-    
-    //fill(255);
-    //rect(enX, enY, enSize, enSize/2); 
   }
   
   void enMove()
