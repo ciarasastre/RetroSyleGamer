@@ -7,6 +7,8 @@
 DoorData door;
 EnemyData boss;
 
+PImage[] manFront = new PImage[3];
+
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 GemData[] coin = new GemData[21]; 
 
@@ -37,6 +39,8 @@ int charX = 450;
 int charY = 400;
 int charSize = 20;
 int charSpeed = 10;
+int charIndex = 0;
+int charTime = 0;
 
 int extra = 0;
 void setup()
@@ -121,7 +125,7 @@ void gameScreen()
   score();
   
   mapDisplay();
-  character();
+  charLoad();
   charMove();
   
   moveBL();
@@ -204,10 +208,13 @@ void score()
 }
 
 //This creates the character
-void character()
+void charLoad()
 {
-  fill(0);
-  ellipse(charX, charY, charSize, charSize);
+  for(int i = 0; i<manFront.length; i++)
+  {
+    manFront[i] = loadImage("frontManW"+i+".png");
+    //ellipse(charX, charY, charSize, charSize);
+  }
   
 }
 
@@ -235,6 +242,29 @@ void charMove()
     if(keyCode == DOWN)
     {
       charY += charSpeed;
+      
+      if(charIndex == manFront.length-1)
+      {
+        charTime+=1;
+        
+        if(charTime == 10)
+        {
+          charIndex = 0;
+          charTime = 0;
+        }
+      }
+      else
+      {
+        charTime+=1;
+        
+        if(charTime == 10)
+        {
+          charIndex++;
+          charTime = 0;
+        }
+      }
+      
+      image(manFront[charIndex],charX,charY);
     }
     
   }
