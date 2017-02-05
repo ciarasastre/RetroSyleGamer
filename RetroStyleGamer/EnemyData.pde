@@ -19,6 +19,7 @@ class EnemyData
   
   void enMove()
   {
+    
     enX++;
   }
 }
