@@ -16,8 +16,8 @@ class EnemyData
   //Health Variables
   int maxHealth = 100;
   float health = 100;
-  float healthDecrease = 1;
-  int healthBarWidth = 60;
+  float healthDecrease = .8;
+  int healthBarWidth = 200;
 
   /*EnemyData()
   {
@@ -80,7 +80,7 @@ class EnemyData
     noStroke();
   fill(236, 240, 241);
   rectMode(CORNER);
-  rect(enX - (healthBarWidth/2), enY - 30, healthBarWidth, 5);
+  rect(enX+20, enY - 30, healthBarWidth, 15); //enX - (healthBarWidth/2)
   
   if(health > 60)
   {
@@ -95,7 +95,7 @@ class EnemyData
     fill(231, 76, 60);
   }
   rectMode(CORNER);
-  rect(enX - (healthBarWidth/2), enY - 30, healthBarWidth*(health/maxHealth), 5);
+  rect(enX+20, enY - 30, healthBarWidth*(health/maxHealth), 15); //enX - (healthBarWidth/2)
   
   }
   void hit()
@@ -103,6 +103,12 @@ class EnemyData
     if(key == ' ' && charX > enX && charX < enX+300)
     {
       text("HIT", height/2, width/2);
+      
+      health -= healthDecrease;
+      if(health <= 0 )
+      {
+        gameScreen = 2;
+      }
     }
   }
   
