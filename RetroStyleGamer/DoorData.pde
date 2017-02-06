@@ -68,7 +68,7 @@ class DoorData
       }
       
       //Reposition Character
-      charX =450;
+      charX =100;
       charY = 400;
     }
   }
@@ -87,7 +87,7 @@ class DoorData
       }
       
       //Reposition Character
-      charX = 450;
+      charX = 700;
       charY = 400;
     }
   }
@@ -127,7 +127,7 @@ class DoorData
       
       //Reposition Character
       charX = 450;
-      charY = 400;
+      charY = 600;
     }
   }
   
@@ -167,7 +167,7 @@ class DoorData
       
       //Reposition Character
       charX =450;
-      charY = 400;
+      charY = 100;
     }
   }
 

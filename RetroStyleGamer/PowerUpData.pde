@@ -14,7 +14,7 @@ class PowerUpData
     pY = 560;
     coffee = true;
 
-    if(charX > pX && charX < pX+100 && charY > pY && charY < pY+160)
+    if(charX+50 > pX && charX+50 < pX+100 && charY+80 > pY && charY+80 < pY+160)
     {
        dead = true;
     }
@@ -33,7 +33,7 @@ class PowerUpData
   
   void getCoffee()
   {
-    if(charX > pX && charX < pX+100 && charY > pY && charY < pY+160)
+    if(charX+50 > pX && charX+50 < pX+100 && charY+80 > pY && charY+80 < pY+160)
     {
       coffee = false;
     }
