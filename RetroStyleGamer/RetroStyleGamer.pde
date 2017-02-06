@@ -8,7 +8,6 @@ DoorData door;
 EnemyData boss;
 PowerUpData item;
 BulletData hitBullet;
-Coin coinz;
 Temp pls;
 
 PImage[] manFront = new PImage[3];
@@ -17,21 +16,12 @@ PImage[] manRight= new PImage[3];
 PImage[] manBack= new PImage[3];
 
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
-GemData[] coin = new GemData[21]; 
+//GemData[] coin = new GemData[21]; 
+Coin[] coins = new Coin[21];
+
 
 int gameScreen = 0;
-//
-  int gemVal = 0;
-  int gemSize = 70;
-  
-  int xVal = 0;
-  int yVal = 0;
-  int x = 50;
-  int y = 80;
 
-  boolean available = true;
-  boolean dead = false;
- //
 //Mapping Variables
 int startX= 0;
 int startY= 0;
@@ -69,37 +59,38 @@ void setup()
   door = new DoorData();
   boss = new EnemyData();
   item = new PowerUpData();
-  coinz = new Coin(450,500);
+  //coins[0] = new Coin(450,500);
+  //coins[1] = new Coin(550,500);
 
   //hitBullet = new BulletData();
   
   bullets = new ArrayList();
   
-  coin[0] = new GemData(150,240);
-  coin[1] = new GemData(250,240);
-  coin[2] = new GemData(350,240);
-  coin[3] = new GemData(450,240);
-  coin[4] = new GemData(550,240);
-  coin[5] = new GemData(650,240);
-  coin[6] = new GemData(750,240);
+  coins[0] = new Coin(150,240);
+  coins[1] = new Coin(250,240);
+  coins[2] = new Coin(350,240);
+  coins[3] = new Coin(450,240);
+  coins[4] = new Coin(550,240);
+  coins[5] = new Coin(650,240);
+  coins[6] = new Coin(750,240);
   
   //Set Middle coins
-  coin[7] = new GemData(150,400);
-  coin[8] = new GemData(250,400);
-  coin[9] = new GemData(350,400);
-  coin[10] = new GemData(450,400);
-  coin[11] = new GemData(550,400);
-  coin[12] = new GemData(650,400);
-  coin[13] = new GemData(750,400);
+  coins[7] = new Coin(150,400);
+  coins[8] = new Coin(250,400);
+  coins[9] = new Coin(350,400);
+  coins[10] = new Coin(450,400);
+  coins[11] = new Coin(550,400);
+  coins[12] = new Coin(650,400);
+  coins[13] = new Coin(750,400);
   
   //Set Bottom coins
-  coin[14] = new GemData(150,560);
-  coin[15] = new GemData(250,560);
-  coin[16] = new GemData(350,560);
-  coin[17] = new GemData(450,560);
-  coin[18] = new GemData(550,560);
-  coin[19] = new GemData(650,560);
-  coin[20] = new GemData(750,560);
+  coins[14] = new Coin(150,560);
+  coins[15] = new Coin(250,560);
+  coins[16] = new Coin(350,560);
+  coins[17] = new Coin(450,560);
+  coins[18] = new Coin(550,560);
+  coins[19] = new Coin(650,560);
+  coins[20] = new Coin(750,560);
   
 }
 
@@ -402,13 +393,13 @@ void mapDisplay()
       //Coin Distribution
       for(int i =0; i<21; i++)
       {
-          coin[i].gemPos();
+          coins[i].gemPos();
         
       }
       
       for(int i =0; i<21; i++)
       {
-        coin[i].gemScore();
+        coins[i].gemScore();
       }
       
       //Door Section
@@ -429,10 +420,10 @@ void mapDisplay()
       mapColourB = 0;
       
       //Coin Distribution
-      coin[0].gemPos();
-      coin[6].gemPos();
-      coin[14].gemPos();
-      coin[20].gemPos();
+      coins[0].gemPos();
+      coins[6].gemPos();
+      coins[14].gemPos();
+      coins[20].gemPos();
       
       
       door.doorPosL();
@@ -449,12 +440,6 @@ void mapDisplay()
       mapColourR = 242;
       mapColourG = 144;
       mapColourB = 255;
-      
-      coin[0].gemPos();
-      coin[6].gemPos();
-      
-      coin[0].gemScore();
-      coin[6].gemScore();
       
       item.coffeeDisplay();
       item.getCoffee();
@@ -493,8 +478,12 @@ void mapDisplay()
       mapColourB = 77;
 
       door.doorPosT();
-      coinz.gemScore();
-      coinz.gemPos();
+      coins[0].gemScore();
+      coins[0].gemPos();
+      
+      coins[1].gemScore();
+      coins[1].gemPos();
+      
       door.doorPosTTrigger();
       break;
     }
@@ -507,10 +496,10 @@ void mapDisplay()
       mapColourB = 0;
       
       //Coin Distribution
-      coin[0].gemPos();
-      coin[6].gemPos();
-      coin[14].gemPos();
-      coin[20].gemPos();
+      coins[0].gemPos();
+      coins[6].gemPos();
+      coins[14].gemPos();
+      coins[20].gemPos();
       
       door.doorPosT();
       door.doorPosB();
