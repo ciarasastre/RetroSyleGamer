@@ -4,6 +4,7 @@ class BulletData
   float bullY;
   int bullSize;
   
+  
   BulletData(float giveX, float giveY)
   {
     bullY = giveY;
@@ -24,5 +25,4 @@ class BulletData
       bullY+=15;
   }
 
-  
 }

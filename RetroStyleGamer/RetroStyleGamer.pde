@@ -7,6 +7,7 @@
 DoorData door;
 EnemyData boss;
 PowerUpData item;
+BulletData hitBullet;
 
 PImage[] manFront = new PImage[3];
 PImage[] manLeft = new PImage[3];
@@ -54,6 +55,7 @@ void setup()
   door = new DoorData();
   boss = new EnemyData();
   item = new PowerUpData();
+  //hitBullet = new BulletData();
   
   bullets = new ArrayList();
   
@@ -140,7 +142,8 @@ void gameScreen()
 
 void gameOverScreen()
 {
-  
+    background(0);
+    text("YOU WIN", height/2, width/2);
 }
 
 /******** INPUTS *****************/
@@ -503,6 +506,8 @@ void mapDisplay()
       
       boss.enDisplay();
       boss.enMove();
+      boss.hit();
+      boss.drawHealth();
       break;
     }
   }//End switch

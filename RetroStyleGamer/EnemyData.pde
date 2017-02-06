@@ -1,16 +1,25 @@
-class EnemyData
+class EnemyData 
 {
   PImage[] bossLeft = new PImage[3];
   
-  int enX;
-  int enY;
-  int enSize;
-  int enSpeed;
+  int enX = -300;
+  int enY = 620;
+  int enSize = 300;
+  int enSpeed = 4;
   
-  int bossTime;
-  int bossIndex;
+  int bossTime = 0;
+  int bossIndex = 0;
+  
+  float hitX;
+  float hitY;
+  
+  //Health Variables
+  int maxHealth = 100;
+  float health = 100;
+  float healthDecrease = 1;
+  int healthBarWidth = 60;
 
-  EnemyData()
+  /*EnemyData()
   {
     enX = -300;
     enY = 620;
@@ -19,8 +28,11 @@ class EnemyData
     
     bossTime = 0;
     bossIndex = 0;
+    
+    hitX = bullX;
+    hitY = bullY;
   }
-  
+  */
   void enDisplay()
   {
     
@@ -62,4 +74,37 @@ class EnemyData
       enX = -300;
     }
   }
+  
+  void drawHealth()
+  {
+    noStroke();
+  fill(236, 240, 241);
+  rectMode(CORNER);
+  rect(enX - (healthBarWidth/2), enY - 30, healthBarWidth, 5);
+  
+  if(health > 60)
+  {
+    fill(46, 204, 113);
+  }
+  else if(health > 30)
+  {
+    fill(230, 126, 34);
+  }
+  else
+  {
+    fill(231, 76, 60);
+  }
+  rectMode(CORNER);
+  rect(enX - (healthBarWidth/2), enY - 30, healthBarWidth*(health/maxHealth), 5);
+  
+  }
+  void hit()
+  {
+    if(key == ' ' && charX > enX && charX < enX+300)
+    {
+      text("HIT", height/2, width/2);
+    }
+  }
+  
+  
 }
