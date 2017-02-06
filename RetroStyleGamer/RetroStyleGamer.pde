@@ -420,7 +420,7 @@ void mapDisplay()
       coin[14].gemPos();
       coin[20].gemPos();
       
-      ruby[1].gemPos();
+      ruby[3].gemPos();
       
       coin[0].gemScore();
       coin[6].gemScore();
@@ -490,6 +490,9 @@ void mapDisplay()
       coin[15].gemScore();
       coin[17].gemScore();
       
+      ruby[5].gemPos();
+      ruby[6].gemPos();
+      
       item.coffeeDisplay();
       item.getCoffee();
       
@@ -517,6 +520,8 @@ void mapDisplay()
       coin[18].gemScore();
       coin[19].gemScore();
       
+      ruby[10].gemPos();
+      
       door.doorPosT();
       door.doorPosB();
       
@@ -531,7 +536,9 @@ void mapDisplay()
       mapColourR = 240;
       mapColourG = 255;
       mapColourB = 77;
-
+      
+      ruby[17].gemPos();
+      
       door.doorPosT();
       
       door.doorPosTTrigger();
@@ -555,6 +562,8 @@ void mapDisplay()
       coin[8].gemScore();
       coin[9].gemScore();
       coin[10].gemScore();
+      
+      ruby[19].gemPos();
       
       door.doorPosT();
       door.doorPosB();
