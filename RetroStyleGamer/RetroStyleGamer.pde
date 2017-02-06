@@ -69,7 +69,7 @@ void setup()
   door = new DoorData();
   boss = new EnemyData();
   item = new PowerUpData();
-  coinz = new Coin(100,100);
+  coinz = new Coin(450,500);
 
   //hitBullet = new BulletData();
   
@@ -493,7 +493,8 @@ void mapDisplay()
       mapColourB = 77;
 
       door.doorPosT();
-      coinz.trying();
+      coinz.gemScore();
+      coinz.gemPos();
       door.doorPosTTrigger();
       break;
     }
