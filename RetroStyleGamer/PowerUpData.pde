@@ -62,7 +62,7 @@ class PowerUpData
   
   void multiDisplay()
   {
-    multiX = 450;
+    multiX = 650;
     multiY = 560;
     multi = true;
 
@@ -74,11 +74,12 @@ class PowerUpData
     {
       if(multiDead == false)
       {
-        fill(0);
+        fill(255);
         ellipse(multiX,multiY,multiSize,multiSize);    
       }
       
     }
+  }
     
     void getMulti()
     {
@@ -91,11 +92,11 @@ class PowerUpData
       {
         multiTime++;
         
-        charSpeed = 20;
+        //charSpeed = 20;
         
         if(multiTime > 200)
         {
-          charSpeed = 5;
+          //charSpeed = 5;
         }
       }
       

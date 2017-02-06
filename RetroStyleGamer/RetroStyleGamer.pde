@@ -436,6 +436,10 @@ void mapDisplay()
       
       item.coffeeDisplay();
       item.getCoffee();
+      
+      item.multiDisplay();
+      item.getMulti();
+      
       door.doorPosL();
       door.doorPosB();
       
