@@ -50,7 +50,12 @@ int charSpeed = 5;
 int charIndex = 0;
 int charTime = 0;
 
+//Gem Variables
 int xCount = 150;
+float coinPoint = 1;
+float rubyPoint = 3;
+float emeraldPoint = 5;
+
 void setup()
 {
   size(900,800); //Width and Height

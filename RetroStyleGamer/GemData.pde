@@ -33,4 +33,5 @@ class GemData
   {
     score = score + point;
   }
+  
 }
