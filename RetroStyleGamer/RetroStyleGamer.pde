@@ -8,6 +8,8 @@ DoorData door;
 EnemyData boss;
 PowerUpData item;
 BulletData hitBullet;
+Coin coinz;
+Temp pls;
 
 PImage[] manFront = new PImage[3];
 PImage[] manLeft = new PImage[3];
@@ -18,7 +20,18 @@ ArrayList<BulletData> bullets; //this is where our bullets will be stored
 GemData[] coin = new GemData[21]; 
 
 int gameScreen = 0;
+//
+  int gemVal = 0;
+  int gemSize = 70;
+  
+  int xVal = 0;
+  int yVal = 0;
+  int x = 50;
+  int y = 80;
 
+  boolean available = true;
+  boolean dead = false;
+ //
 //Mapping Variables
 int startX= 0;
 int startY= 0;
@@ -56,6 +69,8 @@ void setup()
   door = new DoorData();
   boss = new EnemyData();
   item = new PowerUpData();
+  coinz = new Coin(100,100);
+
   //hitBullet = new BulletData();
   
   bullets = new ArrayList();
@@ -478,7 +493,7 @@ void mapDisplay()
       mapColourB = 77;
 
       door.doorPosT();
-      
+      coinz.trying();
       door.doorPosTTrigger();
       break;
     }
