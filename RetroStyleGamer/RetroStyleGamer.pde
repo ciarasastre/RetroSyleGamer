@@ -416,10 +416,15 @@ void mapDisplay()
       mapColourB = 0;
       
       //Coin Distribution
-      coin[0].gemPos();
-      coin[6].gemPos();
-      coin[14].gemPos();
-      coin[20].gemPos();
+      coin[1].gemPos();
+      coin[4].gemPos();
+      coin[5].gemPos();
+      coin[16].gemPos();
+      
+      coin[1].gemScore();
+      coin[4].gemScore();
+      coin[5].gemScore();
+      coin[16].gemScore();
       
       
       door.doorPosL();
@@ -436,6 +441,22 @@ void mapDisplay()
       mapColourR = 242;
       mapColourG = 144;
       mapColourB = 255;
+      
+      coin[2].gemPos();
+      coin[3].gemPos();
+      coin[11].gemPos();
+      coin[12].gemPos();
+      coin[13].gemPos();
+      coin[15].gemPos();
+      coin[17].gemPos();
+      
+      coin[2].gemScore();
+      coin[3].gemScore();
+      coin[11].gemScore();
+      coin[12].gemScore();
+      coin[13].gemScore();
+      coin[15].gemScore();
+      coin[17].gemScore();
       
       item.coffeeDisplay();
       item.getCoffee();
@@ -457,6 +478,12 @@ void mapDisplay()
       mapColourR = 0;
       mapColourG = 255;
       mapColourB = 0;
+
+      coin[18].gemPos();
+      coin[19].gemPos();
+      
+      coin[18].gemScore();
+      coin[19].gemScore();
       
       door.doorPosT();
       door.doorPosB();
@@ -474,11 +501,6 @@ void mapDisplay()
       mapColourB = 77;
 
       door.doorPosT();
-      coin[0].gemScore();
-      coin[0].gemPos();
-      
-      coin[1].gemScore();
-      coin[1].gemPos();
       
       door.doorPosTTrigger();
       break;
@@ -492,10 +514,15 @@ void mapDisplay()
       mapColourB = 0;
       
       //Coin Distribution
-      coin[0].gemPos();
-      coin[6].gemPos();
-      coin[14].gemPos();
-      coin[20].gemPos();
+      coin[7].gemPos();
+      coin[8].gemPos();
+      coin[9].gemPos();
+      coin[10].gemPos();
+      
+      coin[7].gemScore();
+      coin[8].gemScore();
+      coin[9].gemScore();
+      coin[10].gemScore();
       
       door.doorPosT();
       door.doorPosB();
