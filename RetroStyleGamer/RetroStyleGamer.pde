@@ -17,6 +17,7 @@ PImage[] manBack= new PImage[3];
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 
 Coin[] coin = new Coin[21];
+Ruby[] ruby = new Ruby[21];
 
 int gameScreen = 0;
 
@@ -82,6 +83,35 @@ void setup()
   for(int i = 14; i<21; i++)
   {
     coin[i] = new Coin(xCount, 560);
+    xCount = xCount+100;  
+  }
+  
+  /////////////////////////////////
+  
+  xCount = 150;
+  
+  //Placing coin in set position
+  for(int i = 0; i<7; i++)
+  {
+    ruby[i] = new Ruby(xCount, 240);
+    xCount = xCount+100;  
+  }
+  
+  //Reset counter each time
+  xCount = 150;
+  
+  for(int i = 7; i<14; i++)
+  {
+    ruby[i] = new Ruby(xCount, 400);
+    xCount = xCount+100;  
+  }
+  
+  //Reset counter each time
+  xCount = 150;
+  
+  for(int i = 14; i<21; i++)
+  {
+    ruby[i] = new Ruby(xCount, 560);
     xCount = xCount+100;  
   }
   
@@ -390,6 +420,7 @@ void mapDisplay()
       coin[14].gemPos();
       coin[20].gemPos();
       
+      ruby[1].gemPos();
       
       coin[0].gemScore();
       coin[6].gemScore();
@@ -414,6 +445,7 @@ void mapDisplay()
       mapColourR = 0;
       mapColourG = 255;
       mapColourB = 0;
+      
       
       //Coin Distribution
       coin[1].gemPos();
