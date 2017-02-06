@@ -1,59 +1,19 @@
 class GemData
 {
-  PImage coin;
+  float x;
+  float y;
+  int gemsize = 70;
   
-  //Declare datatypes here
-  int gemVal; //coins = 1
-  int gemSize;
+  int xVal = 50;
+  int yVal = 80;
+  boolean available = true;
   
-  int xVal;
-  int yVal;
-  int x;
-  int y;
-  int center;
-  boolean state; 
-  boolean available;
-  boolean dead = false;
-  
-  GemData(int xGive, int yGive)
+  GemData(float giveX, float giveY)
   {
-    //Constuctors here
-    gemSize = 70;
-    
-    x = xGive;
-    y = yGive;
-    
-    xVal = 50;
-    yVal = 80;
-    
-    available = true;
-    
-    coin = loadImage("coin0.png");
+    x = giveX;
+    y = giveY;
   }
-  
-  // This section controls the coin created at each position
-  void gemPos()
-  {
-      //If the character has passed through the coin it dissapears
-      if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal && newMap == true)
-      {
-          dead = true;  
-          
-      }
-      else
-      {
-        if(dead == false)
-        {
-          
-          image(coin, x-50, y-90);
-          
-        }
-        
-      }
-      
-      
-  }
-  
+   
   void gemScore()
   {
     //Checks if character goes over coin AND gives player 1 point
@@ -73,5 +33,4 @@ class GemData
   {
     score = score + point;
   }
-  
 }

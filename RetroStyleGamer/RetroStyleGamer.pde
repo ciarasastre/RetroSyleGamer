@@ -8,7 +8,6 @@ DoorData door;
 EnemyData boss;
 PowerUpData item;
 BulletData hitBullet;
-Temp pls;
 
 PImage[] manFront = new PImage[3];
 PImage[] manLeft = new PImage[3];
@@ -16,7 +15,7 @@ PImage[] manRight= new PImage[3];
 PImage[] manBack= new PImage[3];
 
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
-//GemData[] coin = new GemData[21]; 
+
 Coin[] coins = new Coin[21];
 
 
@@ -59,10 +58,6 @@ void setup()
   door = new DoorData();
   boss = new EnemyData();
   item = new PowerUpData();
-  //coins[0] = new Coin(450,500);
-  //coins[1] = new Coin(550,500);
-
-  //hitBullet = new BulletData();
   
   bullets = new ArrayList();
   

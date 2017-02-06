@@ -1,4 +1,4 @@
-class Coin extends Temp
+class Coin extends GemData
 {
   PImage coin;
   //PVector xyVal;
