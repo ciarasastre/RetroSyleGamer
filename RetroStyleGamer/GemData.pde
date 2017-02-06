@@ -71,7 +71,7 @@ class GemData
   
   void score()
   {
-    score++;
+    score = score + point;
   }
   
 }

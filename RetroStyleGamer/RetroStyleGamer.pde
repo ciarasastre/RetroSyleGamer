@@ -38,6 +38,7 @@ int highScoreX = 10;
 int highScoreY = 60;
 int highScore = 0;
 int time = 0;
+int point = 1;
 
 //Character Variables
 int charX = 450;
@@ -433,6 +434,12 @@ void mapDisplay()
       mapColourR = 242;
       mapColourG = 144;
       mapColourB = 255;
+      
+      coin[0].gemPos();
+      coin[6].gemPos();
+      
+      coin[0].gemScore();
+      coin[6].gemScore();
       
       item.coffeeDisplay();
       item.getCoffee();

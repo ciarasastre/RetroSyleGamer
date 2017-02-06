@@ -92,11 +92,11 @@ class PowerUpData
       {
         multiTime++;
         
-        //charSpeed = 20;
+        point = 2;
         
         if(multiTime > 200)
         {
-          //charSpeed = 5;
+          point = 1;
         }
       }
       
