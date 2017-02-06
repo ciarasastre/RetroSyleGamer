@@ -10,9 +10,6 @@ class EnemyData
   int bossTime = 0;
   int bossIndex = 0;
   
-  float hitX;
-  float hitY;
-  
   //Health Variables
   int maxHealth = 100;
   float health = 100;
@@ -28,9 +25,6 @@ class EnemyData
     
     bossTime = 0;
     bossIndex = 0;
-    
-    hitX = bullX;
-    hitY = bullY;
   }
   */
   void enDisplay()

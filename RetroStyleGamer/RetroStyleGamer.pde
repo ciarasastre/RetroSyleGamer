@@ -435,6 +435,7 @@ void mapDisplay()
       mapColourB = 255;
       
       item.coffeeDisplay();
+      item.getCoffee();
       door.doorPosL();
       door.doorPosB();
       
