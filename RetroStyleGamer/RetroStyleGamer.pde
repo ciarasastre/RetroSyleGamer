@@ -16,7 +16,7 @@ PImage[] manBack= new PImage[3];
 
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 
-Coin[] coins = new Coin[21];
+Coin[] coin = new Coin[21];
 
 int gameScreen = 0;
 
@@ -60,10 +60,10 @@ void setup()
   
   bullets = new ArrayList();
   
-  //Placing coins in set position
+  //Placing coin in set position
   for(int i = 0; i<7; i++)
   {
-    coins[i] = new Coin(xCount, 240);
+    coin[i] = new Coin(xCount, 240);
     xCount = xCount+100;  
   }
   
@@ -72,7 +72,7 @@ void setup()
   
   for(int i = 7; i<14; i++)
   {
-    coins[i] = new Coin(xCount, 400);
+    coin[i] = new Coin(xCount, 400);
     xCount = xCount+100;  
   }
   
@@ -81,7 +81,7 @@ void setup()
   
   for(int i = 14; i<21; i++)
   {
-    coins[i] = new Coin(xCount, 560);
+    coin[i] = new Coin(xCount, 560);
     xCount = xCount+100;  
   }
   
@@ -204,7 +204,7 @@ void score()
     highScore = score;
   }
   
-  //Coins deplete every second
+  //coin deplete every second
   time++;
   
   if(time >= 100)
@@ -384,16 +384,19 @@ void mapDisplay()
       mapColourB = 255;
       
       //Coin Distribution
-      for(int i =0; i<21; i++)
-      {
-          coins[i].gemPos();
-        
-      }
+      coin[0].gemPos();
+      coin[6].gemPos();
+      coin[10].gemPos(); // should be an emerald / ruby
+      coin[14].gemPos();
+      coin[20].gemPos();
       
-      for(int i =0; i<21; i++)
-      {
-        coins[i].gemScore();
-      }
+      
+      coin[0].gemScore();
+      coin[6].gemScore();
+      coin[10].gemScore(); // should be an emerald / ruby
+      coin[14].gemScore();
+      coin[20].gemScore();
+      
       
       //Door Section
       door.doorPosR();
@@ -413,10 +416,10 @@ void mapDisplay()
       mapColourB = 0;
       
       //Coin Distribution
-      coins[0].gemPos();
-      coins[6].gemPos();
-      coins[14].gemPos();
-      coins[20].gemPos();
+      coin[0].gemPos();
+      coin[6].gemPos();
+      coin[14].gemPos();
+      coin[20].gemPos();
       
       
       door.doorPosL();
@@ -471,11 +474,11 @@ void mapDisplay()
       mapColourB = 77;
 
       door.doorPosT();
-      coins[0].gemScore();
-      coins[0].gemPos();
+      coin[0].gemScore();
+      coin[0].gemPos();
       
-      coins[1].gemScore();
-      coins[1].gemPos();
+      coin[1].gemScore();
+      coin[1].gemPos();
       
       door.doorPosTTrigger();
       break;
@@ -489,10 +492,10 @@ void mapDisplay()
       mapColourB = 0;
       
       //Coin Distribution
-      coins[0].gemPos();
-      coins[6].gemPos();
-      coins[14].gemPos();
-      coins[20].gemPos();
+      coin[0].gemPos();
+      coin[6].gemPos();
+      coin[14].gemPos();
+      coin[20].gemPos();
       
       door.doorPosT();
       door.doorPosB();
