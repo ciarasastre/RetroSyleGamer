@@ -18,7 +18,6 @@ ArrayList<BulletData> bullets; //this is where our bullets will be stored
 
 Coin[] coins = new Coin[21];
 
-
 int gameScreen = 0;
 
 //Mapping Variables
@@ -50,7 +49,7 @@ int charSpeed = 5;
 int charIndex = 0;
 int charTime = 0;
 
-int extra = 0;
+int xCount = 150;
 void setup()
 {
   size(900,800); //Width and Height
@@ -61,31 +60,30 @@ void setup()
   
   bullets = new ArrayList();
   
-  coins[0] = new Coin(150,240);
-  coins[1] = new Coin(250,240);
-  coins[2] = new Coin(350,240);
-  coins[3] = new Coin(450,240);
-  coins[4] = new Coin(550,240);
-  coins[5] = new Coin(650,240);
-  coins[6] = new Coin(750,240);
+  //Placing coins in set position
+  for(int i = 0; i<7; i++)
+  {
+    coins[i] = new Coin(xCount, 240);
+    xCount = xCount+100;  
+  }
   
-  //Set Middle coins
-  coins[7] = new Coin(150,400);
-  coins[8] = new Coin(250,400);
-  coins[9] = new Coin(350,400);
-  coins[10] = new Coin(450,400);
-  coins[11] = new Coin(550,400);
-  coins[12] = new Coin(650,400);
-  coins[13] = new Coin(750,400);
+  //Reset counter each time
+  xCount = 150;
   
-  //Set Bottom coins
-  coins[14] = new Coin(150,560);
-  coins[15] = new Coin(250,560);
-  coins[16] = new Coin(350,560);
-  coins[17] = new Coin(450,560);
-  coins[18] = new Coin(550,560);
-  coins[19] = new Coin(650,560);
-  coins[20] = new Coin(750,560);
+  for(int i = 7; i<14; i++)
+  {
+    coins[i] = new Coin(xCount, 400);
+    xCount = xCount+100;  
+  }
+  
+  //Reset counter each time
+  xCount = 150;
+  
+  for(int i = 14; i<21; i++)
+  {
+    coins[i] = new Coin(xCount, 560);
+    xCount = xCount+100;  
+  }
   
 }
 
