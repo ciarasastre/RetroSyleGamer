@@ -1,30 +1,38 @@
 class PowerUpData
 {
-  int pX;
-  int pY;
-  int pSize = 20;
-  
+  int coffeeX;
+  int coffeeY;
+  int coffeeSize = 20;
   boolean coffee;
   float coffeeTime = 0;
-  boolean dead = false;
+  
+  boolean coffeeDead = false;
+  
+  
+  int multiX;
+  int multiY;
+  int multiSize = 20;
+  boolean multi;
+  float multiTime = 0;
+  
+  boolean multiDead = false;
   
   void coffeeDisplay()
   {
-    pX = 450;
-    pY = 560;
+    coffeeX = 450;
+    coffeeY = 560;
     coffee = true;
 
-    if(charX+50 > pX && charX+50 < pX+100 && charY+80 > pY && charY+80 < pY+160)
+    if(charX+50 > coffeeX && charX+50 < coffeeX+100 && charY+80 > coffeeY && charY+80 < coffeeY+160)
     {
-       dead = true;
+       coffeeDead = true;
     }
     else
     {
-      if(dead == false)
+      if(coffeeDead == false)
       {
         fill(0);
-        ellipse(pX,pY,pSize,pSize);
-          
+        ellipse(coffeeX,coffeeY,coffeeSize,coffeeSize);    
       }
       
     }
@@ -33,7 +41,7 @@ class PowerUpData
   
   void getCoffee()
   {
-    if(charX+50 > pX && charX+50 < pX+100 && charY+80 > pY && charY+80 < pY+160)
+    if(charX+50 > coffeeX && charX+50 < coffeeX+100 && charY+80 > coffeeY && charY+80 < coffeeY+160)
     {
       coffee = false;
     }
@@ -51,4 +59,45 @@ class PowerUpData
     }
     
   }
+  
+  void multiDisplay()
+  {
+    multiX = 450;
+    multiY = 560;
+    multi = true;
+
+    if(charX+50 > multiX && charX+50 < multiX+100 && charY+80 > multiY && charY+80 < multiY+160)
+    {
+       multiDead = true;
+    }
+    else
+    {
+      if(multiDead == false)
+      {
+        fill(0);
+        ellipse(multiX,multiY,multiSize,multiSize);    
+      }
+      
+    }
+    
+    void getMulti()
+    {
+      if(charX+50 > multiX && charX+50 < multiX+100 && charY+80 > multiY && charY+80 < multiY+160)
+      {
+        multi = false;
+      }
+      
+      if(multi == true)
+      {
+        multiTime++;
+        
+        charSpeed = 20;
+        
+        if(multiTime > 200)
+        {
+          charSpeed = 5;
+        }
+      }
+      
+    }
 }
