@@ -9,6 +9,12 @@ EnemyData boss;
 Coffee item;
 BulletData hitBullet;
 
+//FONTS
+PFont base;
+PFont title;
+PFont scoreF;
+PFont norm;
+
 //ARDELANEY-48
 
 PImage[] manFront = new PImage[3];
@@ -47,12 +53,9 @@ int map = 1;
 boolean newMap = false;
 
 //Score Variables
-int scoreX = 10;
-int scoreY = 30;
+int scoreX = 20;
+int scoreY = 50;
 int score = 1;
-int highScoreX = 10;
-int highScoreY = 60;
-int highScore = 0;
 int point = 0;
 
 //Character Variables
@@ -84,6 +87,11 @@ void setup()
   door = new DoorData();
   boss = new EnemyData();
   item = new Coffee();
+  
+  base = loadFont("ARDELANEY-48.vlw"); 
+  title = loadFont("Broadway-48.vlw");
+  scoreF = loadFont("Constantia-Bold-30.vlw"); 
+  norm = loadFont("Constantia-Bold-20.vlw");
   
   bullets = new ArrayList();
   
@@ -243,8 +251,8 @@ void winScreen()
     
     //Writing
     fill(0);
-    textSize(30);
-    text("YOU WIN", 330, 380);
+    textFont(base);
+    text("YOU WIN!", 290, 380);
     
 }
 
@@ -258,8 +266,8 @@ void loseScreen()
   
   //Writing
   fill(0);
-  textSize(30);
-  text("YOU LOSE", 380, 300);
+  textFont(base);
+  text("YOU LOSE", 340, 300);
 }
 
 /******** INPUTS *****************/
@@ -312,15 +320,8 @@ void score()
 {
   fill(255);
   noStroke();
-  textSize(30);
+  textFont(scoreF);
   text("Score = "+score, scoreX, scoreY);
-  text("HighScore = "+highScore, highScoreX,  highScoreY);
-  
-  // Highscore 
-  if(score >= highScore)
-  {
-    highScore = score;
-  }
   
   //coin deplete every second
   time++;
@@ -781,8 +782,8 @@ void key()
     else
     {
       fill(255);
-      textSize(20);
-      text("You need a Key", 700, 50);
+      textFont(norm);
+      text("You need a Key!", 700, 50);
     }
 }
 
@@ -795,11 +796,12 @@ void introScreen()
   
   //Writing
   fill(255);
-  textSize(40);
-  text("Time Is Money", 300, 180);
+  textFont(title);
+  text(" $$ Time Is Money $$ ", 190, 180);
   
-  textSize(20);
-  text("Click to Start!", 400, 300);
+  fill(255);
+  textFont(norm);
+  text("Click to Start!", 380, 300);
  
   
 }

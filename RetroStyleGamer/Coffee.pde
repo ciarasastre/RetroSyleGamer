@@ -37,7 +37,8 @@ class Coffee
       if(coffeeTime > 0)
       {
         fill(255);
-        text("Speed Boost!"+coffeeTime, 300, 50);
+        textFont(scoreF);
+        text("Speed Boost :  "+coffeeTime, 300, 50);
         coffeeTime--;
         charSpeed = 20;
       }
