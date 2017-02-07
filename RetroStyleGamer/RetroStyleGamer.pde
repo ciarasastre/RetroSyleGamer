@@ -455,16 +455,10 @@ void mapDisplay()
   {
     case(1):
     {
-      newMap = true;
-      //Change colour to PINK
-      //mapColourR = 242;
-      //mapColourG = 144;
-      //mapColourB = 255;
-      
       //Coin Distribution
       coin[0].gemPos();
       coin[6].gemPos();
-      coin[10].gemPos(); // should be an emerald / ruby
+      emerald[10].gemPos(); // should be an emerald / ruby
       coin[14].gemPos();
       coin[20].gemPos();
       
@@ -473,7 +467,7 @@ void mapDisplay()
       
       coin[0].gemScore();
       coin[6].gemScore();
-      coin[10].gemScore(); // should be an emerald / ruby
+      emerald[10].gemScore(); // should be an emerald / ruby
       coin[14].gemScore();
       coin[20].gemScore();
       
@@ -717,7 +711,7 @@ void key()
     
     if(keyAvail == true)
     {
-       keyImg.resize(90,120);
+       keyImg.resize(90,10);
        image(keyImg, 800, 0);
     }
          

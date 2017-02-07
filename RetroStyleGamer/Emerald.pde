@@ -21,7 +21,7 @@ class Emerald extends GemData
     //xyVal = new PVector(50,80);
     
       //If the character has passed through the coin it dissapears
-      if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal && newMap == true)
+      if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal)
       {
           dead = true;  
           
