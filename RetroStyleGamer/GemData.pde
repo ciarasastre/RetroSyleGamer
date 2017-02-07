@@ -2,16 +2,18 @@ class GemData
 {
   float x;
   float y;
+  int p;
   int gemsize = 70;
   
   int xVal = 50;
   int yVal = 80;
   boolean available = true;
   
-  GemData(float giveX, float giveY)
+  GemData(float giveX, float giveY, int giveP)
   {
     x = giveX;
     y = giveY;
+    p = giveP;
   }
    
   void gemScore()
@@ -31,7 +33,7 @@ class GemData
   
   void score()
   {
-    score = score + point;
+    score = score + p;
   }
   
 }

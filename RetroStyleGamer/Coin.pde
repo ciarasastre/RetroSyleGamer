@@ -9,9 +9,9 @@ class Coin extends GemData
   int xVal = 50;
   int yVal = 80;
 
-  Coin(float x, float y)
+  Coin(float x, float y, int p)
   {
-    super(x,y);
+    super(x,y,p);
   }
   
   

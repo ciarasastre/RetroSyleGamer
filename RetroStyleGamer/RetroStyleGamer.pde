@@ -40,7 +40,7 @@ int highScoreX = 10;
 int highScoreY = 60;
 int highScore = 0;
 int time = 0;
-int point = 1;
+int point = 0;
 
 //Character Variables
 int charX = 450;
@@ -52,8 +52,8 @@ int charTime = 0;
 
 //Gem Variables
 int xCount = 150;
-float coinPoint = 1;
-float rubyPoint = 3;
+int coinPoint = 1;
+int rubyPoint = 3;
 float emeraldPoint = 5;
 
 void setup()
@@ -69,7 +69,7 @@ void setup()
   //Placing coin in set position
   for(int i = 0; i<7; i++)
   {
-    coin[i] = new Coin(xCount, 240);
+    coin[i] = new Coin(xCount, 240,coinPoint);
     xCount = xCount+100;  
   }
   
@@ -78,7 +78,7 @@ void setup()
   
   for(int i = 7; i<14; i++)
   {
-    coin[i] = new Coin(xCount, 400);
+    coin[i] = new Coin(xCount, 400,coinPoint);
     xCount = xCount+100;  
   }
   
@@ -87,7 +87,7 @@ void setup()
   
   for(int i = 14; i<21; i++)
   {
-    coin[i] = new Coin(xCount, 560);
+    coin[i] = new Coin(xCount, 560,coinPoint);
     xCount = xCount+100;  
   }
   
@@ -95,10 +95,10 @@ void setup()
   
   xCount = 150;
   
-  //Placing coin in set position
+  //Placing RUBY in set position
   for(int i = 0; i<7; i++)
   {
-    ruby[i] = new Ruby(xCount, 240);
+    ruby[i] = new Ruby(xCount, 240,rubyPoint);
     xCount = xCount+100;  
   }
   
@@ -107,7 +107,7 @@ void setup()
   
   for(int i = 7; i<14; i++)
   {
-    ruby[i] = new Ruby(xCount, 400);
+    ruby[i] = new Ruby(xCount, 400,rubyPoint);
     xCount = xCount+100;  
   }
   
@@ -116,7 +116,7 @@ void setup()
   
   for(int i = 14; i<21; i++)
   {
-    ruby[i] = new Ruby(xCount, 560);
+    ruby[i] = new Ruby(xCount, 560,rubyPoint);
     xCount = xCount+100;  
   }
   
@@ -426,6 +426,7 @@ void mapDisplay()
       coin[20].gemPos();
       
       ruby[3].gemPos();
+      ruby[3].gemScore();
       
       coin[0].gemScore();
       coin[6].gemScore();

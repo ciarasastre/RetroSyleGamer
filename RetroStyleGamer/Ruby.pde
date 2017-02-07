@@ -1,5 +1,6 @@
 class Ruby extends GemData
 {
+  PImage ruby;
   
   int rubyPoint = 3;
   boolean dead = false;
@@ -7,15 +8,15 @@ class Ruby extends GemData
   int xVal = 50;
   int yVal = 80;
 
-  Ruby(float x, float y)
+  Ruby(float x, float y, int p)
   {
-    super(x,y);
+    super(x,y,p);
   }
   
   
   void gemPos()
   {
-    //coin = loadImage("coin0.png");
+    ruby = loadImage("ruby0.png");
     //xyVal = new PVector(50,80);
     
       //If the character has passed through the coin it dissapears
@@ -28,9 +29,9 @@ class Ruby extends GemData
       {
         if(dead == false)
         {
-          fill(0);
-          ellipse(x,y,70,70);
-          //image(coin, x-50, y-90); 
+          //fill(0);
+          //ellipse(x,y,70,70);
+          image(ruby, x-50, y-90); 
         } 
       }  
   }
