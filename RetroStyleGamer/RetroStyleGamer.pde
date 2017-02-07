@@ -8,6 +8,7 @@ import ddf.minim.*;
 
 Minim minim; //audio context
 AudioPlayer main;
+AudioPlayer bossM;
 
 //CLASSES
 DoorData door;
@@ -56,7 +57,7 @@ int mapColourR = 242;
 int mapColourG = 144;
 int mapColourB = 255;
 int map = 1;
-boolean newMap = false;
+boolean bossFight= false;
 
 //Score Variables
 int scoreX = 20;
@@ -103,12 +104,10 @@ void setup()
   //Music
   minim = new Minim(this);
   main = minim.loadFile("main.mp3");
+  bossM = minim.loadFile("bossM.mp3");
   
-  main.rewind();
-  main.play();
+  music();
 
-  
-  
   bullets = new ArrayList();
   
   //Placing coin in set position
@@ -512,6 +511,8 @@ void mapDisplay()
   {
     case(1):
     {
+      main.play();
+      
       //Coin Distribution
       coin[0].gemPos();
       coin[6].gemPos();
@@ -544,13 +545,6 @@ void mapDisplay()
     
     case(2):
     {
-      newMap = true;
-      //Change colour to GREEN
-      mapColourR = 0;
-      mapColourG = 255;
-      mapColourB = 0;
-      
-      
       //Coin Distribution
       coin[1].gemPos();
       coin[4].gemPos();
@@ -579,11 +573,6 @@ void mapDisplay()
     
     case(3):
     {
-      //Change colour to PINK
-      mapColourR = 242;
-      mapColourG = 144;
-      mapColourB = 255;
-      
       coin[2].gemPos();
       coin[3].gemPos();
       coin[11].gemPos();
@@ -619,11 +608,6 @@ void mapDisplay()
     
     case(4):
     {
-      //Change colour to GREEN
-      mapColourR = 0;
-      mapColourG = 255;
-      mapColourB = 0;
-
       coin[18].gemPos();
       coin[19].gemPos();
       
@@ -648,11 +632,6 @@ void mapDisplay()
     
     case(5):
     {
-      //Change colour to YELLOW
-      mapColourR = 240;
-      mapColourG = 255;
-      mapColourB = 77;
-      
       emerald[7].gemPos();
       emerald[13].gemPos();
       
@@ -676,11 +655,6 @@ void mapDisplay()
     
     case(6):
     {
-      //Change colour to GREEN
-      mapColourR = 0;
-      mapColourG = 255;
-      mapColourB = 0;
-      
       //Coin Distribution
       coin[7].gemPos();
       coin[8].gemPos();
@@ -716,11 +690,9 @@ void mapDisplay()
     
     case(7):
     {
-        //Change colour to YELLOW
-        mapColourR = 240;
-        mapColourG = 255;
-        mapColourB = 77;
-  
+      main.pause();
+      bossM.play();
+      
         door.doorPosT();
         
         door.doorPosTTrigger();
@@ -735,6 +707,7 @@ void mapDisplay()
         //Possible Lose
         coin[0].lose();
       
+      bossFight = true;
       break;
     }
   }//End switch
@@ -857,4 +830,12 @@ void introMan()
         image(intro[index],400,500);
   }
   
+}
+
+void music()
+{
+  if(map == 1)
+  {
+    main.play();
+  }
 }
