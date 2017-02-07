@@ -14,13 +14,19 @@ PImage[] manLeft = new PImage[3];
 PImage[] manRight= new PImage[3];
 PImage[] manBack= new PImage[3];
 
+PImage[] intro = new PImage[2];
+PImage introCoin;
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 
 Coin[] coin = new Coin[21];
 Ruby[] ruby = new Ruby[21];
 Emerald[] emerald = new Emerald[21];
 
+//Game Navigation Variables
 int gameScreen = 0;
+int option;
+int index = 0;
+int time = 0;
 
 //Mapping Variables
 PImage floor;
@@ -41,7 +47,6 @@ int score = 0;
 int highScoreX = 10;
 int highScoreY = 60;
 int highScore = 0;
-int time = 0;
 int point = 0;
 
 //Character Variables
@@ -195,7 +200,8 @@ void draw()
 void initScreen()
 {
   background(0);
-  text("Click to Start", height/2, width/2);
+  introScreen();
+  introMan();
   
 }
 
@@ -713,8 +719,74 @@ void key()
     {
        keyImg.resize(90,10);
        image(keyImg, 800, 0);
-    }
-         
-    
-    
+    }    
 }
+
+void introScreen()
+{
+  //Background
+  introCoin = loadImage("coin0.png");
+  
+  for(int i=0; i<9; i++)
+  {
+    for(int j = 0; j<5; j++)
+    {
+      image(introCoin, startX, startY); 
+      startY += 160;
+    }
+    
+    startY = 0;
+    startX += 100;
+   
+  } 
+  startX = 0;
+  
+  //Writing
+  textSize(40);
+  text("Time Is Money", 250, 100);
+  
+  textSize(20);
+  text("Click to Start!", 300, 300);
+ 
+  
+}
+
+void introMan()
+{
+  
+  //This is for the intro/animation parts
+  for(int i = 0; i<intro.length; i++)
+  {
+    intro[i] = loadImage("intro"+i+".png");
+  }
+  
+  if(gameScreen == 0)
+  {
+    if(index == intro.length-1)
+    {
+          time+=1;
+          
+          if(time == 10)
+          {
+            index = 0;
+            time = 0;
+          }
+     }
+     else
+     {
+        time+=1;
+          
+        if(time == 10)
+        {
+          index++;
+          time = 0;
+          
+         }
+     }
+        image(intro[index],400,400);
+  }
+  
+}
+
+    
+  
