@@ -56,7 +56,6 @@ class DoorData
   
   void doorPosRTrigger()
   {
-    //if(charX+50 <= doorX1B+50 && charX+50 >= doorX1B-50 && charY+80 <= doorY1+80 && charY+80 >= doorY1-80)
     if(charX >= 850 && charY >= 200 && charY <= 460) //This gives you lee way for our body to go in
     {
       if(map == 1)
@@ -76,7 +75,7 @@ class DoorData
   
   void doorPosLTrigger()
   {
-    if(charX <= doorX1A+50 && charX >= doorX1A-50 && charY <= doorY1+80 && charY >= doorY1-80)
+    if(charX <= 0 && charY >= 200 && charY <= 460)
     {
       if(map == 3)
       {
