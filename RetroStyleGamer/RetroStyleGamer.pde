@@ -23,6 +23,7 @@ Emerald[] emerald = new Emerald[21];
 int gameScreen = 0;
 
 //Mapping Variables
+PImage floor;
 int startX= 0;
 int startY= 0;
 int recW = 100;
@@ -245,15 +246,13 @@ void startGame()
 //This method discovers the blocks available for character movement
 void mapping()
 {
-  fill(mapColourR, mapColourG, mapColourB);
-  
-  stroke(0);
+  floor = loadImage("floor0.png");
   
   for(int i=0; i<9; i++)
   {
     for(int j = 0; j<5; j++)
     {
-      rect(startX,startY,recW,recH);
+      image(floor, startX, startY); 
       startY += 160;
     }
     
@@ -263,6 +262,9 @@ void mapping()
   }
   
   startX = 0;
+  
+  fill(255);
+  rect(0,0,900,80);
 }
 
 //Score is kept here
@@ -454,9 +456,9 @@ void mapDisplay()
     {
       newMap = true;
       //Change colour to PINK
-      mapColourR = 242;
-      mapColourG = 144;
-      mapColourB = 255;
+      //mapColourR = 242;
+      //mapColourG = 144;
+      //mapColourB = 255;
       
       //Coin Distribution
       coin[0].gemPos();
