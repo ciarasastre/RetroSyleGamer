@@ -458,9 +458,6 @@ void mapDisplay()
       ruby[3].gemPos();
       ruby[3].gemScore();
       
-      emerald[4].gemPos();
-      emerald[4].gemScore();
-      
       coin[0].gemScore();
       coin[6].gemScore();
       coin[10].gemScore(); // should be an emerald / ruby
@@ -576,7 +573,14 @@ void mapDisplay()
       mapColourG = 255;
       mapColourB = 77;
       
+      emerald[7].gemPos();
+      emerald[13].gemPos();
+      
+      emerald[7].gemScore();
+      emerald[13].gemScore();
+      
       ruby[17].gemPos();
+      ruby[17].gemScore();
       
       door.doorPosT();
       
