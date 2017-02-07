@@ -17,6 +17,7 @@ PImage[] manBack= new PImage[3];
 PImage[] intro = new PImage[2];
 PImage introCoin;
 PImage introBack;
+PImage win;
 
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 
@@ -29,7 +30,7 @@ int gameScreen = 0;
 int option;
 int index = 0;
 int time = 0;
-
+  
 //Mapping Variables
 PImage floor;
 int startX= 0;
@@ -55,7 +56,7 @@ int point = 0;
 int charX = 450;
 int charY = 400;
 int charSize = 20;
-int charSpeed = 5;
+int charSpeed = 25;
 int charIndex = 0;
 int charTime = 0;
 
@@ -226,9 +227,15 @@ void gameScreen()
 
 void gameOverScreen()
 {
-    background(0);
-    text("YOU WIN", height/2, width/2);
+    //Background
+    win = loadImage("win0.png");
+    win.resize(900,800);
+    image(win, startX, startY);
     
+    //Writing
+    fill(0);
+    textSize(30);
+    text("YOU WIN", 330, 380);
     
 }
 
@@ -636,13 +643,13 @@ void mapDisplay()
       door.doorPosB();
       
       door.doorPosTTrigger();
+      door.doorPosBTrigger();
       
-      
-      //You cannot access Map 7 with out key
+      /*You cannot access Map 7 with out key
       if(keyAvail == true)
       {
         door.doorPosBTrigger();
-      }
+      }*/
       
       break;
     }
@@ -787,6 +794,3 @@ void introMan()
   }
   
 }
-
-    
-  

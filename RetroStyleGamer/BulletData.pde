@@ -14,7 +14,7 @@ class BulletData
   
   void display()
   {
-      fill(255);
+      fill(0);
       ellipse(bullX+50, bullY+50, bullSize, bullSize);
   }
     
