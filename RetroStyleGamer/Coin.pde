@@ -1,9 +1,6 @@
 class Coin extends GemData
 {
   PImage coin;
-  //PVector xyVal;
-  
-  int coinPoint = 1;
   boolean dead = false;
   
   int xVal = 50;
@@ -18,22 +15,19 @@ class Coin extends GemData
   void gemPos()
   {
     coin = loadImage("coin0.png");
-    //xyVal = new PVector(50,80);
     
-      //If the character has passed through the coin it dissapears
-      if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal)
+    //If the character has passed through the coin it dissapears
+    if(charX <= x+xVal && charX >= x-xVal && charY <= y+yVal && charY >= y-yVal)
+    {
+      dead = true;  
+    }
+    else
+    {
+      if(dead == false)
       {
-          dead = true;  
-          
-      }
-      else
-      {
-        if(dead == false)
-        {
-          image(coin, x-50, y-90); 
-        } 
-      }  
+        image(coin, x-50, y-90); 
+      } 
+    }  
   }
-  
-  
+   
 }

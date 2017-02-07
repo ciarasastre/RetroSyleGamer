@@ -22,19 +22,21 @@ PFont title;
 PFont scoreF;
 PFont norm;
 
-//ARDELANEY-48
-
+//IMAGES
 PImage[] manFront = new PImage[3];
 PImage[] manLeft = new PImage[3];
 PImage[] manRight= new PImage[3];
 PImage[] manBack= new PImage[3];
-
 PImage[] intro = new PImage[2];
+
+PImage keyImg;
+PImage floor;
 PImage introCoin;
 PImage introBack;
 PImage win;
 PImage lose;
 
+//ARRAYLIST
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 
 Coin[] coin = new Coin[21];
@@ -43,33 +45,27 @@ Emerald[] emerald = new Emerald[21];
 
 //Game Navigation Variables
 int gameScreen = 0;
-int option;
 int index = 0;
 int time = 0;
   
 //Mapping Variables
-PImage floor;
 int startX= 0;
 int startY= 0;
 int recW = 100;
 int recH = 160;
-int mapColourR = 242;
-int mapColourG = 144;
-int mapColourB = 255;
 int map = 1;
-boolean bossFight= false;
 
 //Score Variables
 int scoreX = 20;
 int scoreY = 50;
 int score = 1;
-int point = 0;
+int highScore = 0;
 
 //Character Variables
 int charX = 450;
 int charY = 400;
 int charSize = 20;
-int charSpeed = 25;
+int charSpeed = 5;
 int charIndex = 0;
 int charTime = 0;
 
@@ -78,10 +74,8 @@ int xCount = 150;
 int coinPoint = 1;
 int rubyPoint = 3;
 int emeraldPoint = 5;
-boolean multi = true;
 
 //Key Variables
-PImage keyImg;
 int keyX = 450;
 int keyY = 700;
 int keySize = 70;
@@ -106,7 +100,6 @@ void setup()
   main = minim.loadFile("main.mp3");
   bossM = minim.loadFile("bossM.mp3");
   
-  music();
 
   bullets = new ArrayList();
   
@@ -235,6 +228,7 @@ void draw()
 void initScreen()
 {
   background(0);
+  main.play();
   introScreen();
   introMan();
   
@@ -259,15 +253,17 @@ void gameScreen()
 
 void winScreen()
 {
-    //Background
-    win = loadImage("win0.png");
-    win.resize(900,800);
-    image(win, startX, startY);
+  //Background
+  win = loadImage("win0.png");
+  win.resize(900,800);
+  image(win, startX, startY);
     
-    //Writing
-    fill(0);
-    textFont(base);
-    text("YOU WIN!", 290, 380);
+  //Writing
+  fill(0);
+  textFont(base);
+  text("YOU WIN!", 290, 380);
+  
+  text("Your HighScore : "+highScore, 10, 780);
     
 }
 
@@ -318,12 +314,9 @@ void mapping()
       image(floor, startX, startY); 
       startY += 160;
     }
-    
     startY = 0;
     startX += 100;
-   
   }
-  
   startX = 0;
   
   fill(70,47,1);
@@ -338,7 +331,7 @@ void score()
   textFont(scoreF);
   text("Score = "+score, scoreX, scoreY);
   
-  //coin deplete every second
+  //Coins deplete every second
   time++;
   
   if(time >= 100)
@@ -511,12 +504,10 @@ void mapDisplay()
   {
     case(1):
     {
-      main.play();
-      
       //Coin Distribution
       coin[0].gemPos();
       coin[6].gemPos();
-      emerald[10].gemPos(); // should be an emerald / ruby
+      emerald[10].gemPos(); 
       coin[14].gemPos();
       coin[20].gemPos();
       
@@ -525,7 +516,7 @@ void mapDisplay()
       
       coin[0].gemScore();
       coin[6].gemScore();
-      emerald[10].gemScore(); // should be an emerald / ruby
+      emerald[10].gemScore(); 
       coin[14].gemScore();
       coin[20].gemScore();
       
@@ -674,7 +665,6 @@ void mapDisplay()
       door.doorPosB();
       
       door.doorPosTTrigger();
-      //door.doorPosBTrigger();
       
       //Possible Lose
       coin[0].lose();
@@ -693,21 +683,19 @@ void mapDisplay()
       main.pause();
       bossM.play();
       
-        door.doorPosT();
+      door.doorPosT();
+      door.doorPosTTrigger();
         
-        door.doorPosTTrigger();
+      item.getCoffee();
         
-        item.getCoffee();
+      boss.enDisplay();
+      boss.enMove();
+      boss.hit();
+      boss.drawHealth();
         
-        boss.enDisplay();
-        boss.enMove();
-        boss.hit();
-        boss.drawHealth();
-        
-        //Possible Lose
-        coin[0].lose();
+      //Possible Lose
+      coin[0].lose();
       
-      bossFight = true;
       break;
     }
   }//End switch
@@ -718,7 +706,7 @@ void moveBL() //Move Bullets Left
 {
   for(BulletData temp : bullets)
   {
-     temp.shootLeft();
+     temp.shootDown();
   }
 }
 
@@ -788,16 +776,13 @@ void introScreen()
   textFont(title);
   text(" $$ Time Is Money $$ ", 190, 180);
   
-  fill(255);
   textFont(norm);
-  text("Click to Start!", 380, 300);
- 
-  
+  text("Every second your score goes down so hurry!", 240, 240);
+  text("Click to Start", 380, 300);  
 }
 
 void introMan()
 {
-  
   //This is for the intro/animation parts
   for(int i = 0; i<intro.length; i++)
   {
@@ -827,15 +812,7 @@ void introMan()
           
          }
      }
-        image(intro[index],400,500);
+     image(intro[index],400,500);
   }
   
-}
-
-void music()
-{
-  if(map == 1)
-  {
-    main.play();
-  }
 }

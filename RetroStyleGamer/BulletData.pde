@@ -19,7 +19,7 @@ class BulletData
   }
     
   
-  void shootLeft()
+  void shootDown()
   {
 
       bullY+=15;

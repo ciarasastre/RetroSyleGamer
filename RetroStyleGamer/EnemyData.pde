@@ -61,26 +61,27 @@ class EnemyData
   void drawHealth()
   {
     noStroke();
-  fill(236, 240, 241);
-  rectMode(CORNER);
-  rect(enX+20, enY - 30, healthBarWidth, 15); //enX - (healthBarWidth/2)
+    fill(236, 240, 241);
+    rectMode(CORNER);
+    rect(enX+20, enY - 30, healthBarWidth, 15); //enX - (healthBarWidth/2)
+    
+    if(health > 60)
+    {
+      fill(46, 204, 113);
+    }
+    else if(health > 30)
+    {
+      fill(230, 126, 34);
+    }
+    else
+    {
+      fill(231, 76, 60);
+    }
+    rectMode(CORNER);
+    rect(enX+20, enY - 30, healthBarWidth*(health/maxHealth), 15); //enX - (healthBarWidth/2)
+    
+  }
   
-  if(health > 60)
-  {
-    fill(46, 204, 113);
-  }
-  else if(health > 30)
-  {
-    fill(230, 126, 34);
-  }
-  else
-  {
-    fill(231, 76, 60);
-  }
-  rectMode(CORNER);
-  rect(enX+20, enY - 30, healthBarWidth*(health/maxHealth), 15); //enX - (healthBarWidth/2)
-  
-  }
   void hit()
   {
     if(key == ' ' && charX > enX && charX < enX+300)
@@ -90,6 +91,7 @@ class EnemyData
       health -= healthDecrease;
       if(health <= 0 )
       {
+        highScore = score;
         gameScreen = 2;
       }
     }

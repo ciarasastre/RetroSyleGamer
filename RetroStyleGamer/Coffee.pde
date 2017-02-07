@@ -44,8 +44,7 @@ class Coffee
       }
       else
       {
-          charSpeed = 5;
-
+        charSpeed = 5;
       }
       
     }

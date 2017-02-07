@@ -1,8 +1,6 @@
 class Emerald extends GemData
 {
   PImage emerald;
-  //PVector xyVal;
-  
   boolean dead = false;
   
   int xVal = 50;
