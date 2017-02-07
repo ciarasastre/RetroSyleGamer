@@ -1,11 +1,12 @@
 class PowerUpData
 {
+  PImage coffeeImg;
   int coffeeX;
   int coffeeY;
   int coffeeSize = 20;
   boolean coffee;
-  float coffeeTime = 0;
-  
+
+  int coffeeTime = 200;
   boolean coffeeDead = false;
   
   
@@ -19,43 +20,45 @@ class PowerUpData
   
   void coffeeDisplay()
   {
-    coffeeX = 450;
-    coffeeY = 560;
+    coffeeImg = loadImage("coffee0.png");
+    
+    coffeeX = 350;
+    coffeeY = 250;
     coffee = true;
 
     if(charX+50 > coffeeX && charX+50 < coffeeX+100 && charY+80 > coffeeY && charY+80 < coffeeY+160)
     {
        coffeeDead = true;
+       
     }
     else
     {
       if(coffeeDead == false)
       {
-        fill(0);
-        ellipse(coffeeX,coffeeY,coffeeSize,coffeeSize);    
+        image(coffeeImg, coffeeX-50, coffeeY-90); 
       }
       
     }
-    
+        
   }
   
   void getCoffee()
   {
-    if(charX+50 > coffeeX && charX+50 < coffeeX+100 && charY+80 > coffeeY && charY+80 < coffeeY+160)
+    if(coffeeDead == true)
     {
-      coffee = false;
-    }
-    
-    if(coffee == true)
-    {
-      coffeeTime++;
-      
-      charSpeed = 20;
-      
-      if(coffeeTime > 200)
+      if(coffeeTime > 0)
       {
-        charSpeed = 5;
+        fill(0);
+        text("Coffee Boost!"+coffeeTime, 450, 50);
+        coffeeTime--;
+        charSpeed = 20;
       }
+      else
+      {
+          charSpeed = 5;
+
+      }
+      
     }
     
   }

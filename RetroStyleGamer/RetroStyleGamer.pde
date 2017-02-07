@@ -464,6 +464,7 @@ void mapDisplay()
       coin[14].gemScore();
       coin[20].gemScore();
       
+      item.getCoffee();
       
       //Door Section
       door.doorPosR();
@@ -494,6 +495,9 @@ void mapDisplay()
       coin[5].gemScore();
       coin[16].gemScore();
       
+      //Coffee powerUp
+      item.coffeeDisplay();
+      item.getCoffee();
       
       door.doorPosL();
       door.doorPosR();
@@ -529,11 +533,10 @@ void mapDisplay()
       ruby[5].gemPos();
       ruby[6].gemPos();
       
-      item.coffeeDisplay();
-      item.getCoffee();
-      
       item.multiDisplay();
       item.getMulti();
+      
+      item.getCoffee();
       
       door.doorPosL();
       door.doorPosB();
@@ -558,6 +561,8 @@ void mapDisplay()
       
       ruby[10].gemPos();
       
+      item.getCoffee();
+      
       door.doorPosT();
       door.doorPosB();
       
@@ -581,6 +586,8 @@ void mapDisplay()
       
       ruby[17].gemPos();
       ruby[17].gemScore();
+      
+      item.getCoffee();
       
       door.doorPosT();
       
@@ -608,6 +615,8 @@ void mapDisplay()
       
       ruby[19].gemPos();
       
+      item.getCoffee();
+      
       door.doorPosT();
       door.doorPosB();
       
@@ -627,6 +636,8 @@ void mapDisplay()
       door.doorPosT();
       
       door.doorPosTTrigger();
+      
+      item.getCoffee();
       
       boss.enDisplay();
       boss.enMove();
