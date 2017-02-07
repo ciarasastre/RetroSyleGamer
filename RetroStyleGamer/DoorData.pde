@@ -53,7 +53,6 @@ class DoorData
   }
   
   //This section triggers the next map if the character comes into contact
-  
   void doorPosRTrigger()
   {
     if(charX >= 850 && charY >= 200 && charY <= 460) //This gives you lee way for our body to go in
@@ -69,7 +68,6 @@ class DoorData
       
       //Reposition Character
       charX =100;
-      charY = 400;
     }
   }
   
@@ -88,14 +86,12 @@ class DoorData
       
       //Reposition Character
       charX = 700;
-      charY = 400;
     }
   }
   
   void doorPosTTrigger()
   {
-    //doorX2 = 370, doorY2A = 0,
-    if(charX <= doorX2+130 && charX >= doorX2+30 && charY <= doorY2A+80 && charY >= doorY2A)
+    if(charY <= 80 && charX >= 300 && charX <= 540)
     {
       switch(map)
       {
@@ -126,15 +122,13 @@ class DoorData
       }//end switch
       
       //Reposition Character
-      charX = 450;
       charY = 600;
     }
   }
   
   void doorPosBTrigger()
   {
-    //doorX2, doorY2B
-    if(charX <= doorX2+130 && charX >= doorX2+30 && charY <= doorY2B+80 && charY >= doorY2B)
+    if(charY >= 800 && charX >= 300 && charX <= 540)
     {
       //Because there are more than 2 options we need a switchstate
       switch(map)
@@ -166,7 +160,6 @@ class DoorData
       
       
       //Reposition Character
-      charX =450;
       charY = 100;
     }
   }
