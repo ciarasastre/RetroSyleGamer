@@ -9,6 +9,8 @@ EnemyData boss;
 Coffee item;
 BulletData hitBullet;
 
+//ARDELANEY-48
+
 PImage[] manFront = new PImage[3];
 PImage[] manLeft = new PImage[3];
 PImage[] manRight= new PImage[3];
@@ -18,6 +20,7 @@ PImage[] intro = new PImage[2];
 PImage introCoin;
 PImage introBack;
 PImage win;
+PImage lose;
 
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 
@@ -46,7 +49,7 @@ boolean newMap = false;
 //Score Variables
 int scoreX = 10;
 int scoreY = 30;
-int score = 0;
+int score = 1;
 int highScoreX = 10;
 int highScoreY = 60;
 int highScore = 0;
@@ -188,7 +191,13 @@ void draw()
     
     case(2):
     {
-      gameOverScreen();
+      winScreen();
+      break;
+    }
+    
+    case(3):
+    {
+      loseScreen();
       break;
     }
     
@@ -225,7 +234,7 @@ void gameScreen()
   
 }
 
-void gameOverScreen()
+void winScreen()
 {
     //Background
     win = loadImage("win0.png");
@@ -237,6 +246,20 @@ void gameOverScreen()
     textSize(30);
     text("YOU WIN", 330, 380);
     
+}
+
+void loseScreen()
+{
+  lose = loadImage("lost.png");
+  lose.resize(900,800);
+
+  //Background
+  image(lose, 0, 0); 
+  
+  //Writing
+  fill(0);
+  textSize(30);
+  text("YOU LOSE", 380, 300);
 }
 
 /******** INPUTS *****************/
@@ -496,6 +519,9 @@ void mapDisplay()
       
       door.doorPosRTrigger();
       door.doorPosBTrigger();
+      
+      //Possible Lose
+      coin[0].lose();
       break;
     }
     
@@ -528,6 +554,9 @@ void mapDisplay()
       
       door.doorPosLTrigger();
       door.doorPosRTrigger();
+      
+      //Possible Lose
+      coin[0].lose();
       break;
     }
     
@@ -564,6 +593,10 @@ void mapDisplay()
       
       door.doorPosLTrigger();
       door.doorPosBTrigger();
+      
+      //Possible Lose
+      coin[0].lose();
+      
       break;
     }
     
@@ -589,6 +622,10 @@ void mapDisplay()
       
       door.doorPosTTrigger();
       door.doorPosBTrigger();
+      
+      //Possible Lose
+      coin[0].lose();
+      
       break;
     }
     
@@ -613,6 +650,9 @@ void mapDisplay()
       door.doorPosT();
       
       door.doorPosTTrigger();
+      
+      //Possible Lose
+      coin[0].lose();
       
       break;
     }
@@ -643,13 +683,16 @@ void mapDisplay()
       door.doorPosB();
       
       door.doorPosTTrigger();
-      door.doorPosBTrigger();
+      //door.doorPosBTrigger();
       
-      /*You cannot access Map 7 with out key
+      //Possible Lose
+      coin[0].lose();
+      
+      //You cannot access Map 7 with out key
       if(keyAvail == true)
       {
         door.doorPosBTrigger();
-      }*/
+      }
       
       break;
     }
@@ -671,6 +714,9 @@ void mapDisplay()
         boss.enMove();
         boss.hit();
         boss.drawHealth();
+        
+        //Possible Lose
+        coin[0].lose();
       
       break;
     }

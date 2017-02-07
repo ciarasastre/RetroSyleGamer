@@ -1,5 +1,6 @@
 class GemData
 {
+  
   float x;
   float y;
   int p;
@@ -35,6 +36,15 @@ class GemData
   void score()
   {
     score = score + p;
+    
+  }
+  
+  void lose()
+  {
+    if(score < 0)
+    {
+      gameScreen = 3;
+    }
   }
   
 }
