@@ -1,6 +1,6 @@
 class Emerald extends GemData
 {
-  //PImage emerald;
+  PImage emerald;
   //PVector xyVal;
   
   boolean dead = false;
@@ -17,7 +17,7 @@ class Emerald extends GemData
   
   void gemPos()
   {
-    //emerald = loadImage("emerald0.png");
+    emerald = loadImage("emerald0.png");
     //xyVal = new PVector(50,80);
     
       //If the character has passed through the coin it dissapears
@@ -30,9 +30,7 @@ class Emerald extends GemData
       {
         if(dead == false)
         {
-                    fill(0);
-          ellipse(x,y,70,70);
-          //image(emerald, x-50, y-90); 
+          image(emerald, x-50, y-90); 
         } 
       }  
   }
