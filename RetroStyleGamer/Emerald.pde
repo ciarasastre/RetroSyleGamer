@@ -1,13 +1,15 @@
-class Ruby extends GemData
+class Emerald extends GemData
 {
-  PImage ruby;
+  //PImage emerald;
+  //PVector xyVal;
   
   boolean dead = false;
   
   int xVal = 50;
   int yVal = 80;
 
-  Ruby(float x, float y, int p)
+  
+  Emerald(float x, float y, int p)
   {
     super(x,y,p);
   }
@@ -15,7 +17,7 @@ class Ruby extends GemData
   
   void gemPos()
   {
-    ruby = loadImage("ruby0.png");
+    //emerald = loadImage("emerald0.png");
     //xyVal = new PVector(50,80);
     
       //If the character has passed through the coin it dissapears
@@ -28,7 +30,9 @@ class Ruby extends GemData
       {
         if(dead == false)
         {
-          image(ruby, x-50, y-90); 
+                    fill(0);
+          ellipse(x,y,70,70);
+          //image(emerald, x-50, y-90); 
         } 
       }  
   }

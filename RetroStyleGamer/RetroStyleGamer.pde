@@ -18,6 +18,7 @@ ArrayList<BulletData> bullets; //this is where our bullets will be stored
 
 Coin[] coin = new Coin[21];
 Ruby[] ruby = new Ruby[21];
+Emerald[] emerald = new Emerald[21];
 
 int gameScreen = 0;
 
@@ -54,7 +55,7 @@ int charTime = 0;
 int xCount = 150;
 int coinPoint = 1;
 int rubyPoint = 3;
-float emeraldPoint = 5;
+int emeraldPoint = 5;
 
 void setup()
 {
@@ -117,6 +118,35 @@ void setup()
   for(int i = 14; i<21; i++)
   {
     ruby[i] = new Ruby(xCount, 560,rubyPoint);
+    xCount = xCount+100;  
+  }
+  
+  /////////////////////////////////
+  
+  xCount = 150;
+  
+  //Placing EMERALD in set position
+  for(int i = 0; i<7; i++)
+  {
+    emerald[i] = new Emerald(xCount, 240, emeraldPoint);
+    xCount = xCount+100;  
+  }
+  
+  //Reset counter each time
+  xCount = 150;
+  
+  for(int i = 7; i<14; i++)
+  {
+    emerald[i] = new Emerald(xCount, 400, emeraldPoint);
+    xCount = xCount+100;  
+  }
+  
+  //Reset counter each time
+  xCount = 150;
+  
+  for(int i = 14; i<21; i++)
+  {
+    emerald[i] = new Emerald(xCount, 560, emeraldPoint);
     xCount = xCount+100;  
   }
   
@@ -427,6 +457,9 @@ void mapDisplay()
       
       ruby[3].gemPos();
       ruby[3].gemScore();
+      
+      emerald[4].gemPos();
+      emerald[4].gemScore();
       
       coin[0].gemScore();
       coin[6].gemScore();
