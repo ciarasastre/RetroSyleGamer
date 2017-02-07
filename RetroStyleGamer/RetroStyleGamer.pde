@@ -3,6 +3,12 @@
     But "Time is money" for every second your total money will decrease.
 */
 
+//MUSIC 
+import ddf.minim.*;
+
+Minim minim; //audio context
+AudioPlayer main;
+
 //CLASSES
 DoorData door;
 EnemyData boss;
@@ -88,10 +94,20 @@ void setup()
   boss = new EnemyData();
   item = new Coffee();
   
+  //FONTS
   base = loadFont("ARDELANEY-48.vlw"); 
   title = loadFont("Broadway-48.vlw");
   scoreF = loadFont("Constantia-Bold-30.vlw"); 
   norm = loadFont("Constantia-Bold-20.vlw");
+  
+  //Music
+  minim = new Minim(this);
+  main = minim.loadFile("main.mp3");
+  
+  main.rewind();
+  main.play();
+
+  
   
   bullets = new ArrayList();
   
