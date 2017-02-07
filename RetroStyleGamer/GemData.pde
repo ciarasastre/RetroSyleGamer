@@ -9,6 +9,7 @@ class GemData
   int yVal = 80;
   boolean available = true;
   
+  
   GemData(float giveX, float giveY, int giveP)
   {
     x = giveX;

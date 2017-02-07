@@ -56,6 +56,14 @@ int xCount = 150;
 int coinPoint = 1;
 int rubyPoint = 3;
 int emeraldPoint = 5;
+boolean multi = true;
+
+//Key Variables
+PImage keyImg;
+int keyX = 450;
+int keyY = 700;
+int keySize = 70;
+boolean keyAvail = false;
 
 void setup()
 {
@@ -203,6 +211,8 @@ void gameScreen()
   moveBL();
   displayAllBull();
   bulletControls();
+  key();
+  
 }
 
 void gameOverScreen()
@@ -533,9 +543,6 @@ void mapDisplay()
       ruby[5].gemPos();
       ruby[6].gemPos();
       
-      item.multiDisplay();
-      item.getMulti();
-      
       item.getCoffee();
       
       door.doorPosL();
@@ -592,6 +599,7 @@ void mapDisplay()
       door.doorPosT();
       
       door.doorPosTTrigger();
+      
       break;
     }
     
@@ -621,28 +629,34 @@ void mapDisplay()
       door.doorPosB();
       
       door.doorPosTTrigger();
-      door.doorPosBTrigger();
+      
+      //You cannot access Map 7 with out key
+      if(keyAvail == true)
+      {
+        door.doorPosBTrigger();
+      }
       
       break;
     }
     
     case(7):
     {
-      //Change colour to YELLOW
-      mapColourR = 240;
-      mapColourG = 255;
-      mapColourB = 77;
-
-      door.doorPosT();
+        //Change colour to YELLOW
+        mapColourR = 240;
+        mapColourG = 255;
+        mapColourB = 77;
+  
+        door.doorPosT();
+        
+        door.doorPosTTrigger();
+        
+        item.getCoffee();
+        
+        boss.enDisplay();
+        boss.enMove();
+        boss.hit();
+        boss.drawHealth();
       
-      door.doorPosTTrigger();
-      
-      item.getCoffee();
-      
-      boss.enDisplay();
-      boss.enMove();
-      boss.hit();
-      boss.drawHealth();
       break;
     }
   }//End switch
@@ -675,5 +689,26 @@ void bulletControls()//mousePressed()//add a new bullet if mouse is clicked
       bullets.add(temp);
     }
   }
+}
+
+void key()
+{
+  keyImg = loadImage("key0.png");
   
+  if(map == 5)
+    {
+    if(charX+50 > keyX && charX+50 < keyX+100 && charY+80 > keyY && charY+80 < keyY+160)
+      {
+         keyAvail = true;
+         
+      }
+      else
+      {
+        if(keyAvail == false)
+        {
+          image(keyImg, keyX-50, keyY-50); 
+        }
+        
+      }
+    }
 }

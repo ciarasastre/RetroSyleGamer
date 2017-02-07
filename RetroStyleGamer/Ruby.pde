@@ -32,6 +32,4 @@ class Ruby extends GemData
         } 
       }  
   }
-  
-  
 }
