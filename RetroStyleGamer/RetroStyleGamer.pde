@@ -6,7 +6,7 @@
 //CLASSES
 DoorData door;
 EnemyData boss;
-PowerUpData item;
+Coffee item;
 BulletData hitBullet;
 
 PImage[] manFront = new PImage[3];
@@ -72,7 +72,7 @@ void setup()
   
   door = new DoorData();
   boss = new EnemyData();
-  item = new PowerUpData();
+  item = new Coffee();
   
   bullets = new ArrayList();
   
@@ -263,14 +263,15 @@ void mapping()
   
   startX = 0;
   
-  fill(255);
+  fill(70,47,1);
   rect(0,0,900,80);
 }
 
 //Score is kept here
 void score()
 {
-  fill(0);
+  fill(255);
+  noStroke();
   textSize(30);
   text("Score = "+score, scoreX, scoreY);
   text("HighScore = "+highScore, highScoreX,  highScoreY);
@@ -712,5 +713,14 @@ void key()
         }
         
       }
+    }//end if map
+    
+    if(keyAvail == true)
+    {
+       keyImg.resize(90,120);
+       image(keyImg, 800, 0);
     }
+         
+    
+    
 }

@@ -1,4 +1,4 @@
-class PowerUpData 
+class Coffee 
 {
   PImage coffeeImg;
   int coffeeX;
@@ -36,8 +36,8 @@ class PowerUpData
     {
       if(coffeeTime > 0)
       {
-        fill(0);
-        text("Coffee Boost!"+coffeeTime, 450, 50);
+        fill(255);
+        text("Speed Boost!"+coffeeTime, 300, 50);
         coffeeTime--;
         charSpeed = 20;
       }

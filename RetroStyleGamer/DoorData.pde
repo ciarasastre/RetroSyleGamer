@@ -42,7 +42,7 @@ class DoorData
   void doorPosT()
   {
     fill(0);
-    rect(doorX2, doorY2A, doorSizeH, doorSizeW);
+    rect(doorX2, doorY2A+80, doorSizeH, doorSizeW);
     
   }
   
