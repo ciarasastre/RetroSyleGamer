@@ -16,6 +16,8 @@ PImage[] manBack= new PImage[3];
 
 PImage[] intro = new PImage[2];
 PImage introCoin;
+PImage introBack;
+
 ArrayList<BulletData> bullets; //this is where our bullets will be stored
 
 Coin[] coin = new Coin[21];
@@ -633,6 +635,7 @@ void mapDisplay()
       
       door.doorPosTTrigger();
       
+      
       //You cannot access Map 7 with out key
       if(keyAvail == true)
       {
@@ -717,36 +720,31 @@ void key()
     
     if(keyAvail == true)
     {
-       keyImg.resize(90,10);
+       keyImg.resize(100,100);
        image(keyImg, 800, 0);
-    }    
+    }
+    else
+    {
+      fill(255);
+      textSize(20);
+      text("You need a Key", 700, 50);
+    }
 }
 
 void introScreen()
 {
   //Background
-  introCoin = loadImage("coin0.png");
-  
-  for(int i=0; i<9; i++)
-  {
-    for(int j = 0; j<5; j++)
-    {
-      image(introCoin, startX, startY); 
-      startY += 160;
-    }
-    
-    startY = 0;
-    startX += 100;
-   
-  } 
-  startX = 0;
+  introBack = loadImage("introBack.png");
+  introBack.resize(900,800);
+  image(introBack, startX, startY); 
   
   //Writing
+  fill(255);
   textSize(40);
-  text("Time Is Money", 250, 100);
+  text("Time Is Money", 300, 180);
   
   textSize(20);
-  text("Click to Start!", 300, 300);
+  text("Click to Start!", 400, 300);
  
   
 }
@@ -783,7 +781,7 @@ void introMan()
           
          }
      }
-        image(intro[index],400,400);
+        image(intro[index],400,500);
   }
   
 }
