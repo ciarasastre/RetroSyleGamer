@@ -16,17 +16,6 @@ class EnemyData
   float healthDecrease = .8;
   int healthBarWidth = 200;
 
-  /*EnemyData()
-  {
-    enX = -300;
-    enY = 620;
-    enSize = 300;
-    enSpeed = 4;
-    
-    bossTime = 0;
-    bossIndex = 0;
-  }
-  */
   void enDisplay()
   {
     

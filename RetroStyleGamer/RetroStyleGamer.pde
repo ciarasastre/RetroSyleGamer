@@ -228,6 +228,8 @@ void gameOverScreen()
 {
     background(0);
     text("YOU WIN", height/2, width/2);
+    
+    
 }
 
 /******** INPUTS *****************/
