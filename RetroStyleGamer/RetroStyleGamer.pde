@@ -507,18 +507,21 @@ void mapDisplay()
       //Coin Distribution
       coin[0].gemPos();
       coin[6].gemPos();
-      emerald[10].gemPos(); 
       coin[14].gemPos();
       coin[20].gemPos();
       
       ruby[3].gemPos();
-      ruby[3].gemScore();
+      
+      emerald[10].gemPos(); 
       
       coin[0].gemScore();
       coin[6].gemScore();
-      emerald[10].gemScore(); 
       coin[14].gemScore();
       coin[20].gemScore();
+      
+      ruby[3].gemScore();
+      
+      emerald[10].gemScore(); 
       
       item.getCoffee();
       
@@ -583,6 +586,9 @@ void mapDisplay()
       ruby[5].gemPos();
       ruby[6].gemPos();
       
+      ruby[5].gemScore();
+      ruby[6].gemScore();
+      
       item.getCoffee();
       
       door.doorPosL();
@@ -606,6 +612,8 @@ void mapDisplay()
       coin[19].gemScore();
       
       ruby[10].gemPos();
+      
+      ruby[10].gemScore();
       
       item.getCoffee();
       
@@ -658,6 +666,8 @@ void mapDisplay()
       coin[10].gemScore();
       
       ruby[19].gemPos();
+      
+      ruby[19].gemScore();
       
       item.getCoffee();
       
