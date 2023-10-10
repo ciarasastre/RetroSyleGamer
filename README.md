@@ -24,7 +24,9 @@ RUN!!
 
 <b>YouTube Video : </b> <br>
 Here is a visual representaion of the game and how it works.<br>
-https://youtu.be/_Mrx_wrwATo<br><br>
+[![Watch the video](https://img.youtube.com/vi/_Mrx_wrwATo/hqdefault.jpg)](https://www.youtube.com/embed/_Mrx_wrwATo)
+
+
 
 <b>Extras : </b> <br>
 Creating this game really helped wrap my head around Inheritance. <br>
